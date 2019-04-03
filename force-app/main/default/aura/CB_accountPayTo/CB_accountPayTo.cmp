@@ -1,0 +1,213 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <aura:attribute name="activeTab" type="String" default="tab1" />
+    
+    <div>
+        <div class="base-form">
+            
+            <div class="form-header">
+                <h3>Choose an account to pay</h3>                            
+            </div>
+            
+            <div class="form-body">
+                <lightning:tabset >
+                    <lightning:tab label="Pay an existing payee">
+                        
+                        <div class="slds-form-element search-box">
+                            <div class="slds-form-element__control">
+                                <div class="slds-combobox_container slds-has-inline-listbox">
+                                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-combobox-lookup" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                            <input class="slds-input slds-combobox__input" id="combobox-unique-id" aria-autocomplete="list" aria-controls="listbox-unique-id" autocomplete="off" role="textbox" placeholder="Search" type="text" />
+                                            <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                                <lightning:icon iconName="utility:search" variant="search" size="x-small"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end search -->
+                        
+                        <table class="slds-table slds-table_bordered slds-table_fixed-layout table-grid" role="grid">
+                            <thead>
+                                <tr class="">
+                                    <th class="slds-text-title_caps title-tbl-th" scope="col" style="width: 24px;">
+                                    </th>
+                                    <th class="slds-text-title_caps title-tbl-th" aria-label="Payee" scope="col">
+                                        <span class="" title="Payee">Payee</span>
+                                    </th>
+                                    <th class="slds-text-title_caps title-tbl-th" aria-label="Reference" scope="col">
+                                        <span class="" title="Reference">Reference</span>
+                                    </th>
+                                    <th class="slds-text-title_caps title-tbl-th" aria-label="Account details" scope="col">
+                                        <span class="" title="Account details">Account details</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="slds-hint-parent">
+                                    <td class="slds-text-align_right" role="gridcell">
+                                        <span class="slds-checkbox">
+                                            <input name="options" id="checkbox-01" tabindex="-1" value="on" type="checkbox" />
+                                            <label class="slds-checkbox__label" for="checkbox-01">
+                                                <span class="slds-checkbox_faux"></span>
+                                                <span class="slds-form-element__label slds-assistive-text">Select item 1</span>
+                                            </label>
+                                        </span>
+                                    </td>
+                                    <th scope="row" tabindex="0">
+                                        <div class="slds-truncate" title="Acme - 1,200 Widgets"><a href="javascript:void(0);" tabindex="-1">A IRIMIEA</a></div>
+                                    </th>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="Acme">FOOD</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="4/10/15">20-29-41 70591890</div>
+                                    </td>
+                                </tr>
+                                <tr class="slds-hint-parent">
+                                    <td class="slds-text-align_right" role="gridcell">
+                                        <span class="slds-checkbox">
+                                            <input name="options" id="checkbox-02" tabindex="-1" value="on" type="checkbox" />
+                                            <label class="slds-checkbox__label" for="checkbox-02">
+                                                <span class="slds-checkbox_faux"></span>
+                                                <span class="slds-form-element__label slds-assistive-text">Select item 2</span>
+                                            </label>
+                                        </span>
+                                    </td>
+                                    <th scope="row">
+                                        <div class="slds-truncate" title="Acme - 200 Widgets"><a href="javascript:void(0);" tabindex="-1">B R TUTUIANU</a></div>
+                                    </th>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="Acme">MACHIAJ</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="1/31/15">40-45-27 12065916</div>
+                                    </td>
+                                </tr>
+                                <tr class="slds-hint-parent">
+                                    <td class="slds-text-align_right" role="gridcell">
+                                        <span class="slds-checkbox">
+                                            <input name="options" id="checkbox-03" tabindex="-1" value="on" type="checkbox" />
+                                            <label class="slds-checkbox__label" for="checkbox-03">
+                                                <span class="slds-checkbox_faux"></span>
+                                                <span class="slds-form-element__label slds-assistive-text">Select item 3</span>
+                                            </label>
+                                        </span>
+                                    </td>
+                                    <th scope="row">
+                                        <div class="slds-truncate" title="salesforce.com - 1,000 Widgets"><a href="javascript:void(0);" tabindex="-1">D MITA</a></div>
+                                    </th>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="salesforce.com">CAR</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="1/31/15 3:45PM">20-91-79 90829013</div>
+                                    </td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </lightning:tab>
+                    
+                    <lightning:tab label="Pay someone new">
+                        
+                        <div class="slds-p-vertical_small">
+                            <div class="info-box slds-p-around_small">
+                                <div class="slds-grid">
+                                	<div class="slds-p-horizontal_medium">
+                                        <lightning:icon iconName="action:approval" variant="approval"/>
+                                    </div>
+                                    <div>
+                                        <h2>Identity verified</h2>
+                                        <p>Keep your phone to hand - you'll need it for the next step.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-grid slds-p-vertical_small">
+                            <div class="head-txt">
+                                <h3>Who are you paying?</h3>
+                            </div>
+                            <div class="slds-p-left_x-small">
+                                <div class="head-ico">
+                                    <lightning:icon iconName="action:question_post_action" variant="question_post_action"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-grid slds-wrap slds-p-vertical_small">
+                            <div class="slds-size_4-of-12 pay-lbl">
+                            	<p>Account holder name</p>
+                            </div>
+                            <div class="slds-size_4-of-12 slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <input class="slds-input" placeholder="Enter Name" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-grid slds-wrap slds-p-vertical_small">
+                            <div class="slds-size_4-of-12 pay-lbl">
+                                <p>Sort code</p>
+                            </div>
+                            <div class="slds-size_4-of-12">
+                                <div class="slds-form-element slds-grid">
+                                    <div class="slds-form-element__control">
+                                        <input class="slds-input" type="text" />
+                                    </div>
+                                    <div class="separator slds-p-horizontal_xx-small">-</div>
+                                    <div class="slds-form-element__control">
+                                        <input class="slds-input" type="text" />
+                                    </div>
+                                    <div class="separator slds-p-horizontal_xx-small">-</div>
+                                    <div class="slds-form-element__control">
+                                        <input class="slds-input" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-grid slds-wrap slds-p-vertical_small">
+                            <div class="slds-size_4-of-12 pay-lbl">
+                            	<p>Account number</p>
+                            </div>
+                            <div class="slds-size_4-of-12 slds-form-element pay-input">
+                                <div class="slds-form-element__control">
+                                    <input class="slds-input" placeholder="Enter Account" type="text" />
+                                </div>
+                            </div>
+                            <div class="slds-size_4-of-12 info-msg slds-p-left_small">
+                                <p>If the account number only has 7 digits, add a zero to the front.</p>
+                            </div>
+                            <div class="slds-size_4-of-12"></div>
+                            <div class="slds-size_8-of-12">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-checkbox">
+                                            <input name="options" id="checkbox-8" value="on" type="checkbox" />
+                                            <label class="slds-checkbox__label" for="checkbox-8">
+                                                <span class="slds-checkbox_faux"></span>
+                                                <span class="slds-form-element__label">Add these details to my payee list so I don't need to authorise this payee again.</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning:tab>
+                    <lightning:tab label="Pay a company">
+                        Sample Content Three
+                    </lightning:tab>
+                </lightning:tabset>
+
+                
+            </div> <!-- end form body -->
+        </div> <!-- end base form -->
+
+    </div>
+	
+</aura:component>

@@ -1,0 +1,12 @@
+.THIS ul {
+    font-size: 16px;
+}
+.THIS ul > li > a {
+    color: #007EB6;
+    font-size: 0.8em;
+    text-decoration: none;
+    cursor: pointer;
+}
+.THIS ul > li > a:hover {
+    text-decoration: underline;
+}

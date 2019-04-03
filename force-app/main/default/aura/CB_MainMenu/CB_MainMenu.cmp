@@ -1,0 +1,261 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <div>
+        <div class="menu-item">
+            <div class="menu-btn first-item" aria-haspopup="true" title="Move money">
+                <a class="home-ico" href="javascript:void(0);">
+                    <lightning:icon iconName="utility:home" variant="announcement"/>
+                </a>
+            </div>
+        </div>
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Move money">
+                <a>Move money</a>                                
+            </div>
+            
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Manage accounts">
+                <a>Manage accounts</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Borrow">
+                <a>Borrow</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Save">
+                <a>Save</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Invest">
+                <a>Invest</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Insure">
+                <a>Insure</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+        
+        <div class="slds-dropdown-trigger menu-item full-width">
+            <div class="menu-btn last-item" onclick="onHomeMenu()" aria-haspopup="true" title="Rewards">
+                <a>Rewards</a>
+            </div>
+            <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                <ul class="slds-dropdown__list" role="menu">
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                        </a>
+                    </li>
+                    <li class="slds-dropdown__item" role="presentation">
+                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end menu item -->
+    </div>
+	
+</aura:component>

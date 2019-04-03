@@ -1,0 +1,11 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <div>
+        <h3>Hello <strong>Mr Clouderia Client</strong></h3>
+        <div class="additional">
+            <p>You last logged in on <strong>Tue 30 May at 09:05pm</strong></p>    
+        </div>
+    </div>
+	
+</aura:component>

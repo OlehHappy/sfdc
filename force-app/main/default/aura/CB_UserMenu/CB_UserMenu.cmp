@@ -1,0 +1,90 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global">
+    
+    <div>
+        <div class="slds-grid">
+            <div class="slds-grid user-notify">
+                <div>
+                    <a class="icon" href="javascript:void(0);">
+                        <lightning:icon iconName="action:email" variant="email"/>
+                        <p>Messages</p>
+                    </a>
+                </div>
+                <div>
+                    <a class="icon" href="javascript:void(0);">
+                        <lightning:icon iconName="action:announcement" variant="announcement"/>
+         
+                        <p>Notifications</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="user-controls">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-p-horizontal_small slds-size_1-of-2">
+                        <div class="customer-name">
+                            <span>Mr Clouderia Client</span>    
+                        </div>
+                        
+                    </div>
+                    <div class="slds-p-horizontal_small slds-size_1-of-2">
+                        <div class="logout-btn">
+                            <a class="blue-btn" href="javascript:void(0);"><span>Log out</span></a>        
+                        </div>
+                    </div>
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-dropdown-trigger">
+                            <div class="user-preferences">
+                                
+                                <div class="icon">                                                        
+
+                                        <lightning:icon iconName="utility:down" variant="down"/>
+                
+
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="slds-dropdown">
+                                <ul class="slds-dropdown__list" role="menu">
+                                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                        </a>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                        </a>
+                                    </li>
+                                    <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                        <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                            <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                        </a>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                            <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> <!-- end dropdown item -->
+                        
+                    </div> 
+                </div>
+                
+            </div> <!-- user-controls -->
+            
+            
+        </div>
+    </div>
+	
+</aura:component>

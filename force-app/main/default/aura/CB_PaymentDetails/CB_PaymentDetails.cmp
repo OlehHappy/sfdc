@@ -1,0 +1,90 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    
+    
+    <div>
+        <div class="base-form">
+            
+            <div class="form-header">
+                <h3>Payment details</h3>                            
+            </div>
+            
+            <div class="form-body">
+                <div class="slds-form slds-form_stacked" style="padding-bottom: 20px;">
+                    <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                        <div class="slds-p-horizontal_small slds-size_2-of-6">
+                            <h3 class="form-label">Amount</h3>
+                        </div>
+                        <div class="slds-p-horizontal_small slds-size_4-of-6">
+                            <div class="slds-form-element" style="width: 70%;">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+
+                                    <lightning:icon iconName="custom:custom41" variant="custom41" class="slds-input__icon slds-input__icon_left slds-icon-text-default" />
+
+                                    <input id="text-input-id-1" class="slds-input" placeholder="Placeholder Text" type="text" />
+                                    <button class="slds-input__icon slds-input__icon_right slds-button slds-button_icon">
+
+                                        <lightning:icon iconName="utility:clear" variant="clear" class="slds-button__icon slds-icon-text-light" />
+
+                                        <span class="slds-assistive-text">Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="slds-form slds-form_stacked slds-border_top" style="padding: 20px 0;">
+                    <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                        <div class="slds-p-horizontal_small slds-size_2-of-6">
+                            <h3 class="form-label">Make payment</h3>
+                        </div>
+                        <div class="slds-p-horizontal_small slds-size_4-of-6">
+                            <fieldset class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <div class="slds-radio_button-group">
+                                        <span class="slds-button slds-radio_button">
+                                            <input name="radio" id="monday" value="on" type="radio" />
+                                            <label class="slds-radio_button__label" for="monday">
+                                                <span class="slds-radio_faux">Now</span>
+                                            </label>
+                                        </span>
+                                        <span class="slds-button slds-radio_button">
+                                            <input name="radio" id="tuesday" value="on" type="radio" />
+                                            <label class="slds-radio_button__label" for="tuesday">
+                                                <span class="slds-radio_faux">Later</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="slds-form slds-form_stacked slds-border_top"  style="padding-top: 20px;">
+                    <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                        <div class="slds-p-horizontal_small slds-size_2-of-6">
+                            <h3 class="form-label">Payment reference</h3>
+                        </div>
+                        <div class="slds-p-horizontal_small slds-size_4-of-6">
+                            <div class="slds-form-element" style="width: 70%;">
+                                
+                                <div class="slds-form-element__control">
+                                    <input id="text-input-id-1" class="slds-input" placeholder="eg concept tickets" type="text" />
+                                </div>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                
+                
+                
+            </div> <!-- end form body -->
+        </div> <!-- end base form -->
+        
+    </div>
+    
+</aura:component>

@@ -1,0 +1,19 @@
+.THIS .ui-header {
+    background-color: #007eb6;
+    color: #fff;
+    padding: 10px 20px;
+    border: solid 1px #007eb6;
+    border-radius: 3px 3px 0 0;
+}
+.THIS .ui-header .ui-title {
+    font-size: 22px;
+    margin-left: 20px;
+}
+.THIS .ui-header .second-col {
+    margin: auto;
+}
+.THIS .ui-header .ui-options {
+    float: right;
+    margin-right: 15px;
+    font-size: 14px;
+}

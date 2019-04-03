@@ -1,0 +1,38 @@
+.THIS {
+}
+.THIS .base-form {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.THIS .base-form .form-header {
+    background-color: #007eb6;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.THIS .base-form .form-header > h3 {
+    font-size: 16px;
+}
+.THIS .base-form .form-body {
+    border-left: 50px solid #eee;
+    border-bottom-left-radius: 5px;
+    padding: 30px 10px 30px 20px;
+}
+.THIS .base-form .form-body .info-msg {
+    padding: 0 20px 25px 15px;
+}
+.THIS .base-form .form-body .info-msg .slds-box {
+    display: flex;
+    background: #e5f2f8;
+}
+.THIS .base-form .form-body .info-msg .txt {
+    margin: auto 0;
+    padding: 0 15px;
+}
+.THIS .base-form .form-label {
+    color: #00395d;
+    font-size: 16px;
+}

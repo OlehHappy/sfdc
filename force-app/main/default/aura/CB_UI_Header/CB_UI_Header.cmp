@@ -1,0 +1,16 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+	<div>
+        <div class="ui-header">
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <span class="ui-title">My accounts</span>    
+                </div>
+                <div class="slds-col second-col">
+                    <span class="ui-options">Showing <strong>2 of 2</strong> accounts</span>    
+                </div>                                    	
+            </div>
+        </div> <!-- end-ui-header -->
+    </div>
+</aura:component>

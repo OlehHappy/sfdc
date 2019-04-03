@@ -1,0 +1,20 @@
+.THIS .main-wrapper {
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.THIS .header {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.THIS .header .logo {
+    padding-top: 30px;
+}
+.THIS .header .user-menu {
+    float: right;
+}
+.THIS .main-menu {
+    padding: 20px 0;
+}
+.THIS .head-title {
+    padding: 10px 10px;
+}

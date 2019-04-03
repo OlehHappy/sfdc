@@ -1,0 +1,6 @@
+.sfdx/
+.vscode/
+config/
+manifest/
+.forceignore
+sfdx-project.json

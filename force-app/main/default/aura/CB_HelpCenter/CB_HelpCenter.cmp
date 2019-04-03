@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <div>
+        <div class="hlpcenter-head">
+            <h1>Need help?</h1>    
+        </div>
+        <div class="hlpcenter-content">
+            <ul class="links-tbl">
+                <li class="bordered">
+                    <a class="link">
+                        <lightning:icon iconName="utility:chevronright" variant="chevronright" />
+                        <span class="txt">How long will it take for my payment to be processed?</span>
+                    </a>
+                </li>
+                <li class="bordered">
+                    <a class="link">
+                        <lightning:icon iconName="utility:chevronright" variant="chevronright" />
+                        <span class="txt">Why do I need this?</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link">
+                        <lightning:icon iconName="utility:chevronright" variant="chevronright" />
+                        <span class="txt">Keep your details safe</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	
+</aura:component>

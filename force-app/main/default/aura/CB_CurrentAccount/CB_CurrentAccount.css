@@ -1,0 +1,60 @@
+.THIS .acc-details {
+    margin-top: 20px;
+}
+.THIS .acc-content {
+    padding: 0 20px 10px 15px;
+}
+.THIS .acc-content .first-fld > a {
+    color: #007eb6;
+    font-size: 20px;
+}
+.THIS .acc-content .first-fld > p {
+    font-weight: bold;
+    font-size: 15px;
+}
+.THIS .acc-content .details-col {
+    padding: 20px 0;
+}
+.THIS .acc-content .details-col .first-fld {
+    text-align: right;
+    padding-right: 20px;
+}
+.THIS .acc-content .details-col .first-fld > h3 {
+    font-size: 15px;
+}
+.THIS .acc-content .details-col .second-fld > h3 {
+    color: #00618c;
+    font-weight: bold;
+    font-size: 15px;
+}
+.THIS .acc-content .second-fld {
+    margin: auto 0;
+}
+.THIS .acc-content .last-col .slds-form-element {
+    width: 100%;
+    padding-top: 10px;
+}
+.THIS .extra-options {
+    background: #e5f2f8;
+    border: solid 1px #bfdfed !important;
+    border-radius: .25em;
+    margin-top: 20px;
+}
+.THIS .extra-options .icon .slds-icon {
+    fill: #00395d;
+}
+.THIS .extra-options .icon > span {
+    color: #007eb6;
+    background-color: transparent;
+}
+.THIS .extra-options .title {
+    padding-left: 15px;
+}
+.THIS .extra-options .title > h1 {
+    color: #00395d;
+    font-size: 15px;
+    font-weight: bold;
+}
+.THIS .extra-options .title > p {
+    padding: 10px 0;
+}

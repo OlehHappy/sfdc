@@ -1,0 +1,107 @@
+.THIS .main-section {
+    background-image: url("/diego/resource/1509531151000/diego/img/section1.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom 193px;
+    margin-bottom: -100px;
+    height: 90vh;
+    min-height: 680px;
+    max-height: 800px;
+    overflow: hidden;
+    z-index: 0;
+}
+.THIS .hp-section {
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.THIS .clouds {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 161px;
+    width: 100%;
+}
+.THIS .clouds .clouds-bg {
+    position: absolute;
+    right: -1600px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background: url("/diego/resource/1509531151000/diego/img/bg-clouds.png") 0% 0% repeat;
+    z-index: 1;
+    background-size: contain;
+    -moz-animation: MOVE-BG 60s infinite linear;
+	-webkit-animation: MOVE-BG 60s infinite linear;
+}
+.THIS .body {
+    margin: 0 auto;
+    z-index: 2;
+    max-width: 770px;
+    margin-top: -150px;
+}
+.THIS .body h1 {
+    color: #4A4A4A;
+    font-size: 55px;
+    text-transform: capitalize;
+}
+.THIS .body p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #4A4A4A;
+    padding: 0 20px 20px 20px;
+    padding-bottom: 75px;
+}
+.THIS .main-btn {
+    background-color: #FF0083;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 45px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 6px;
+    position: relative;
+    font-weight: 700;
+}
+.THIS .video-link {
+    padding-top: 30px;
+}
+.THIS .btn-video {
+    color: #FF0083;
+    font-weight: 400;
+    font-size: 18px;
+}
+.THIS .btn-video > span:before {
+    content: "";
+    background: transparent url("/diego/resource/1509531151000/diego/img/icons.svg") no-repeat -178px -78px;
+    background-size: 350px 100px;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    overflow: hidden;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: inline-block;
+    right: 10px;
+    top: 4px;
+}
+.THIS .in-the-press {
+    background: #F7F7F7 url("/diego/resource/1509531151000/diego/img/bg-in-the-press.png") center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    height: 93px;
+    width: 100%;
+    left: 0;
+    bottom: 100px;
+}
+@-webkit-keyframes MOVE-BG {
+	from {
+		-webkit-transform:translateX(0)
+	}
+	to {
+		-webkit-transform:translateX(-1600px)
+	}
+}

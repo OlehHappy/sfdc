@@ -1,0 +1,68 @@
+.THIS {
+    background: #313131;
+    min-height: 250px;
+    padding: 40px;
+}
+.THIS .social-links {
+    float: right;
+}
+.THIS .social-links li {
+    padding: 0 5px;
+}
+.THIS .social-links li a {
+    background: #4A4A4A;
+    width: 57px;
+    height: 57px;
+    position: relative;
+    display: block;
+    border-radius: 50%;
+}
+.THIS .social-links li a:hover {
+    background: #FF0083;
+}
+.THIS .social-links li a:before {
+    content: "";
+    background: transparent url("/diego/resource/1509531151000/diego/img/icons.svg") no-repeat -200px 0;
+    background-size: 350px 100px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+}
+.THIS .social-links li a.fb:before {
+    background-position: -200px -25px;
+    width: 13px;
+    height: 25px;
+    margin-left: -7px;
+    margin-top: -12px;
+}
+.THIS .social-links li a.instagram:before {
+    background-position: -250px 0;
+    width: 29px;
+    height: 29px;
+    margin-left: -14px;
+    margin-top: -14px;
+}
+.THIS .social-links li a.twitter:before {
+    background-position: -222px -22px;
+    width: 28px;
+    height: 28px;
+    margin-left: -13px;
+    margin-top: -15px;
+}
+.THIS .footer-menu li {
+    padding-right: 10px;
+}
+.THIS .service-btn {
+    color: #fff;
+    font-size: 16px;
+}
+.THIS .txt {
+    padding-top: 30px;
+}
+.THIS .legal {
+    color: #B7B7B7;
+    font-size: 16px;
+}

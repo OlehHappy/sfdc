@@ -1,0 +1,62 @@
+<!--
+ - Created by leon on 31.10.18.
+ -->
+
+<aura:component controller="MI_WeatherController" description="MI_Weather" implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="weather" type="Map" default="{}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div>
+        <aura:if isTrue="{! not(empty(v.weather))}">
+        <div class="slds-grid slds-wrap slds-p-vertical_medium">
+            <div class="slds-size_2-of-12">
+                <div class="weather-box">
+                    <div class="head-now">
+                        <h1>Now</h1>
+                    </div>
+                    <div class="body slds-p-vertical_small">
+                        <div class="">
+                            <img src="{!$Resource.bluewolf + '/img/ico/'+ v.weather.now.icon +'.png'}" alt="Bluewolf Logo"/>
+                        </div>
+                        <div class="temperature slds-p-vertical_xx-small">
+                            <p>{!v.weather.now.temperatureCelsius} &#8451;</p>
+                        </div>
+                        <div class="summary slds-p-bottom_x-small">
+                            <p>{!v.weather.now.summary}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-size_10-of-12 weather-today">
+                <div class="weather-box">
+                    <div class="head">
+                        <h1>Today</h1>
+                    </div>
+                    <div class="slds-grid body">
+                        <aura:iteration items="{!v.weather.today}" var="daily">
+                            <div class="slds-col slds-p-horizontal_xxx-small weather-col">
+                                <div class="time">
+                                    <p>{!daily.time}</p>
+                                </div>
+                                <div class="icon">
+                                    <img src="{!$Resource.bluewolf + '/img/ico/'+ daily.icon +'.png'}" alt="Bluewolf Logo"/>
+                                </div>
+                                <div class="temprature-long">
+                                    <p>{!daily.temperatureCelsius} &#8451;</p>
+                                </div>
+
+                                <div class="summary">
+                                    <p>{!daily.summary}</p>
+                                </div>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </aura:if>
+    </div>
+</aura:component>

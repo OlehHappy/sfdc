@@ -1,0 +1,62 @@
+.THIS .weather-today {
+    padding-left: 10px;
+}
+.THIS .time-box {
+    border: solid 1px #bfdfed;
+    background: #e5f2f8;
+    border-radius: .25rem;
+}
+.THIS .weather-box {
+    border: solid 1px #bfdfed;
+    background: #e5f2f8;
+    border-radius: .25rem;
+    height: 175px;
+}
+.THIS .weather-box .head {
+    background: #135f90;
+    border-radius: .25em .25em 0 0;
+    border-bottom: solid 1px #bfdfed;
+}
+.THIS .weather-box .head > h1 {
+    color: #fff;
+    padding: 5px 10px;
+}
+.THIS .weather-box .body {
+    text-align: center;
+}
+.THIS .weather-box .body .icon {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+.THIS .weather-box .body .time {
+    background: cadetblue;
+    width: 100%;
+}
+.THIS .weather-box .body .time > p {
+    color: #fff;
+}
+.THIS .weather-box .body .temperature > p {
+    font-size: 20px;
+}
+.THIS .temprature-long {
+    padding-top: 15px;
+    font-weight: 700;
+}
+.THIS .weather-box .top-separator {
+    border-top: solid 1px #bfdfed;
+    padding-top: 7px;
+}
+.THIS .head-now {
+    text-align: center;
+    background: cornflowerblue;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: .25em .25em 0 0;
+    border-bottom: solid 1px #bfdfed;
+}
+.THIS .weather-col {
+    width: 45px;
+    padding-top: 3px;
+}

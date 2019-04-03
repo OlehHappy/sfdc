@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction,flexipage:availableForAllPageTypes,lightning:actionOverride" access="global" >
+
+    <div>
+        some test
+    </div>
+</aura:component>

@@ -1,0 +1,17 @@
+<aura:component access="global"
+                implements="forceCommunity:availableForAllPageTypes">
+
+    <div>
+        <div class="main-head">
+        	<ul class="slds-list_horizontal">
+            	<li><a>Home</a></li>
+                <li><a>FAQ</a></li>
+                <li><a>Blog</a></li>
+                <li><a>API</a></li>
+            </ul>
+            <a class="main-logo">
+            	<img src="{!$Resource.diego + '/img/logo.svg'}" alt="Diego Logo"/>
+            </a>
+        </div>
+    </div>
+</aura:component>

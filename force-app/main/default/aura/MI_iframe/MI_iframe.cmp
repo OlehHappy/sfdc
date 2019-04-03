@@ -1,0 +1,14 @@
+<!--
+ - Created by leon on 26.10.18.
+ -->
+
+<aura:component controller="MI_iframeController" description="MI_iframe" implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="user" type="User" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div>
+        <aura:if isTrue="{! not(empty(v.user.Custom_URL__c))}">
+            <iframe width="560" height="315" src="{!v.user.Custom_URL__c}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </aura:if>
+    </div>
+</aura:component>

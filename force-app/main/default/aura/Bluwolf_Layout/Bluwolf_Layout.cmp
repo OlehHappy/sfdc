@@ -1,0 +1,18 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Bluewolf Layout">
+    <aura:attribute name="top" type="Aura.Component[]" />
+    <aura:attribute name="content" type="Aura.Component[]" />
+    <aura:attribute name="bottom" type="Aura.Component[]" />
+    
+    <div class="page-wrapper">
+        <div class="top-header">{!v.top}</div>
+        
+        <!-- Content -->
+        <div class="slds-grid content">
+            <div class="slds-col  slds-align--absolute-center slds-container--large slds-grid--vertical-align-center">
+                {!v.content}
+            </div>
+        </div>
+        
+        {!v.bottom}
+    </div>
+</aura:component>

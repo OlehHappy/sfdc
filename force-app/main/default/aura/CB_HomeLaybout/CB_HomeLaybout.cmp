@@ -1,0 +1,44 @@
+<aura:component implements="forceCommunity:layout" access="global" description="CB Home Layout">
+    <aura:attribute name="top" type="Aura.Component[]" />
+    <aura:attribute name="logo" type="Aura.Component[]" />
+    <aura:attribute name="userMenu" type="Aura.Component[]" />
+    <aura:attribute name="mainMenu" type="Aura.Component[]" />
+    <aura:attribute name="headTitle" type="Aura.Component[]" />
+    <aura:attribute name="content" type="Aura.Component[]" />
+    <aura:attribute name="rightCol" type="Aura.Component[]" />
+    <aura:attribute name="controlButtons" type="Aura.Component[]" />
+    <aura:attribute name="footer" type="Aura.Component[]" />
+    
+    <div>
+        <div class="slds-grid slds-wrap main-wrapper">
+            <div class="slds-size_1-of-1">{!v.top}</div>        
+            <div class="slds-size_1-of-1">
+                <div class="header">
+                    <div class="slds-grid">
+                        <div class="slds-col">
+                            <div class="logo">{!v.logo}</div>
+                        </div>
+                        <div class="slds-col">
+                            <div class="user-menu">{!v.userMenu}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="main-menu">{!v.mainMenu}</div>
+            </div>        
+            <div class="slds-size_1-of-1">
+                <div class="head-title">{!v.headTitle}</div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_8-of-12 slds-p-right_small">{!v.content}</div>
+                    <div class="slds-size_4-of-12 slds-p-left_small">{!v.rightCol}</div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">{!v.controlButtons}</div>
+            <div class="slds-size_1-of-1">{!v.footer}</div>
+            
+        </div>
+    </div>
+</aura:component>

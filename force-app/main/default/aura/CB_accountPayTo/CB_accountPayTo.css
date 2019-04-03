@@ -1,0 +1,78 @@
+.THIS .base-form {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.THIS .base-form .form-header {
+    background-color: #007eb6;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.THIS .base-form .form-header > h3 {
+    font-size: 16px;
+}
+.THIS .base-form .form-body {
+    border-left: 50px solid #eee;
+    border-bottom-left-radius: 5px;
+    padding: 30px 10px 30px 20px;
+}
+
+.THIS .base-form .form-body .info-box {
+    display: flex;
+    background: #ffefc3;
+    border: 1px solid #ffbe10;
+    border-radius: .25em;
+}
+
+.THIS .base-form .form-label {
+    color: #00395d;
+    font-size: 16px;
+}
+.THIS .slds-tabs--default__nav .slds-tabs--default__item {
+    font-size: 14px;
+    width: 33%;
+    text-align: center;
+    color: #036;
+}
+.THIS .base-form .form-body .head-txt {
+    color: #00395d;
+    margin: auto 0;
+}
+.THIS .base-form .form-body .head-ico {
+    width: 30px;
+    height: 30px;
+    background: #007eb6;
+    border-radius: 50%;
+    text-align: center;
+}
+.THIS .base-form .form-body .head-ico .slds-icon-action-question-post-action {
+    background: transparent;
+    padding: 0;
+}
+.THIS .base-form .form-body .head-ico .slds-icon {
+    width: 20px;
+    height: 20px;
+    padding-top: 2px;
+}
+.THIS .base-form .form-body .slds-text-title_caps, 
+.THIS .base-form .form-body .slds-table td, 
+.THIS .base-form .form-body .slds-table th {
+    font-size: 13px;
+}
+.THIS .search-box {
+    padding: 10px 0 20px 0;
+    width: 50%;
+}
+.THIS .base-form .form-body .pay-lbl, 
+.THIS .base-form .form-body .pay-input,
+.THIS .base-form .form-body .separator {
+    margin: auto 0;
+}
+.THIS .base-form .form-body .info-msg > p {
+    font-size: 14px;
+    font-style: italic;
+    color: #696969;
+}

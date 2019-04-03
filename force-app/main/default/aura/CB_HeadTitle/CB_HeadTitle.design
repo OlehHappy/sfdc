@@ -1,0 +1,6 @@
+<design:component label="CB Head Title" >
+    <design:attribute name="line1" label="to del"/>
+    <design:attribute name="line2" label="to del"/>
+    <design:attribute name="title" label="Title"/>
+    <design:attribute name="showAdditions" label="Show additions"/>
+</design:component>

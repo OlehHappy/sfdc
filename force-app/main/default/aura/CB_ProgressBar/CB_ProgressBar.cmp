@@ -1,0 +1,12 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <div>
+        <ul>
+            <li class="first active">1. Payment details</li>
+            <li class="not-active">2. Confirm details</li>
+            <li class="last">3. Receipt</li>
+        </ul>
+    </div>
+	
+</aura:component>

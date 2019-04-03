@@ -1,0 +1,10 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" 
+                access="global">
+    
+    <div>
+        <a>
+            <img src="{!$Resource.Page_Layout_Files + '/img/logo.png'}"/>
+        </a>
+    </div>
+	
+</aura:component>

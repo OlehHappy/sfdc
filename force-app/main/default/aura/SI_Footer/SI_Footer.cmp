@@ -1,0 +1,21 @@
+<aura:component access="global"
+                implements="forceCommunity:availableForAllPageTypes">
+    
+    <div>
+    	<ul class="social-links slds-list_horizontal">
+        	<li><a class="fb social-btn"></a></li>
+            <li><a class="instagram social-btn"></a></li>
+            <li><a class="twitter social-btn"></a></li>
+        </ul>
+        <ul class="footer-menu slds-list_horizontal">
+            <li><a class="service-btn">Terms Of Service</a></li>
+            <li><a class="service-btn">Privacy Policy</a></li>
+            <li><a class="service-btn">Legal Stuff</a></li>
+            <li><a class="service-btn">Lemonade Nationwide</a></li>
+        </ul>
+        <div class="txt">
+            <p class="legal">&copy; Lemonade Insurance Agency, LLC</p>
+            <p class="legal">Insurance provided by Lemonade Insurance Company, 85 Broad Street, New York, NY 10004</p>
+        </div>
+    </div>
+</aura:component>

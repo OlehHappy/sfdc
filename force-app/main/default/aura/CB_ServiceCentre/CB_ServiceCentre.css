@@ -1,0 +1,32 @@
+.THIS {
+    background: #e5f2f8;
+    border: solid 1px #bfdfed !important;
+    border-radius: .25em;
+    margin-top: 20px;
+}
+.THIS .service-head {
+    background: #0072b6;
+    padding: 15px 30px;
+    border-radius: .25em .25em 0 0;
+}
+.THIS .service-head > h1 {
+    font-size: 18px;
+    color: #fff;
+}
+.THIS .service-title {
+    padding-bottom: 10px;
+}
+.THIS .service-lbl {
+    width: 80%;
+}
+.THIS .service-icon {
+    width: 20%;
+    padding-left: 5px;
+}
+.THIS .service-lbl > a {
+    color: #007eb6;
+    font-size: 20px;
+}
+.THIS .service-icon > span {
+    background-color: #007eb6;
+}

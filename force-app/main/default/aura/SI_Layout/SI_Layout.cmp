@@ -1,0 +1,12 @@
+<aura:component implements="forceCommunity:layout" access="global" description="SocialInsurance	Basic Layout">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="content" type="Aura.Component[]" />
+    <aura:attribute name="footer" type="Aura.Component[]" />
+    
+    <div class="main-wrapper">
+        <div class="header">{! v.header}</div>
+        <div class="content">{! v.content}</div>
+        <div class="footer">{! v.footer}</div>
+    </div>
+	
+</aura:component>

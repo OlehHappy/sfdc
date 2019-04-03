@@ -1,0 +1,77 @@
+.THIS .head-panel {
+    border: solid 1px #bfdfed;
+    border-radius: .25em;
+    border-bottom-width: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.THIS .head-panel .header {
+    text-align: center;
+}
+.THIS .head-panel .header > h1 {
+
+}
+.THIS .search-box {
+    display: flex;
+}
+.THIS .search-box .search-btn {
+    padding-top: 23px;
+}
+.THIS .time-box {
+    border: solid 1px #bfdfed;
+    background: #e5f2f8;
+    border-radius: .25rem;
+}
+.THIS .weather-box {
+    border: solid 1px #bfdfed;
+    background: #e5f2f8;
+    border-radius: .25rem;
+}
+.THIS .weather-box .head {
+    background: #135f90;
+    border-radius: .25em .25em 0 0;
+    border-bottom: solid 1px #bfdfed;
+}
+.THIS .weather-box .head > h1 {
+    color: #fff;
+    padding: 5px 10px;
+}
+.THIS .weather-box .body {
+    text-align: center;
+}
+.THIS .weather-box .body-tomorrow {
+    text-align: center;
+    width: 20%;
+}
+.THIS .weather-box .body-tonight {
+    text-align: center;
+    width: 13.33%;
+}
+.THIS .weather-box .body .icon {
+    padding-top: 10px;
+}
+.THIS .weather-box .body .time {
+    background: cadetblue;
+    margin: 0 2px;
+}
+.THIS .weather-box .body .time > p {
+    color: #fff;
+}
+.THIS .weather-box .body .temperature > p {
+    font-size: 20px;
+}
+.THIS .weather-box .top-separator {
+    border-top: solid 1px #bfdfed;
+    padding-top: 7px;
+}
+.THIS .body-item {
+    
+}
+.THIS .head-now {
+    text-align: center;
+    background: cornflowerblue;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: .25em .25em 0 0;
+    border-bottom: solid 1px #bfdfed;
+}

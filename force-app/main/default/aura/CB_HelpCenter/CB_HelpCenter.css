@@ -1,0 +1,33 @@
+.THIS {
+    border: 1px solid #ffbe10;
+    background: #ffefc3;
+    border-radius: .25em;
+}
+.THIS .hlpcenter-head {
+    background: #ffce4c;
+}
+.THIS .hlpcenter-head > h1 {
+    color: #00395d;
+    font-size: 18px;
+    padding: 15px 30px;
+}
+.THIS .hlpcenter-content a.link {
+    display: flex;
+    color: #069;
+    font-size: 15px;
+    
+}
+.THIS .hlpcenter-content a.link .icon,
+.THIS .hlpcenter-content a.link .txt {
+    margin: auto 0;
+}
+.THIS .hlpcenter-content a.link .txt {
+    padding: 0 15px;
+}
+
+.THIS ul.links-tbl > li {
+    padding: 15px 0 15px 30px;
+}
+.THIS ul.links-tbl > li.bordered {
+    border-bottom: 1px solid #ffdf8b;
+}

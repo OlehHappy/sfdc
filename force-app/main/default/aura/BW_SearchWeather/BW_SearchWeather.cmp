@@ -1,0 +1,229 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                controller="BW_SearchController" 
+                access="global">
+    
+    <aura:attribute name="value" type="String" />
+    <aura:attribute name="label" type="String"/>
+    <aura:attribute name="placeholder" type="String"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="browserId" type="String"/>
+    <aura:attribute name="hasHistory" type="Boolean" default="false"/>
+    <aura:attribute name="searchHistory" type="List"/>
+    <aura:attribute name="weather" type="Map" default="{}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div>
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="spinner" alternativeText="Loading..." />
+
+        <div class="slds-grid slds-grid_align-center">
+            <div class="head-panel slds-p-horizontal_x-large">
+                <div class="slds-p-vertical_small header">
+                    <h1>Weather Forecast App</h1>    
+                </div>
+            </div>
+        	
+        </div>
+        
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_3-of-12 slds-p-right_large">
+                <aura:if isTrue="{!v.weather.length != 0}">
+                <div aura:id="time" class="time-box slds-hide">
+                    <div class="body slds-p-around_small">
+                        <h1 class="">Weather Forecast in {!v.value}</h1>
+                        <p class="">Current time: {!v.weather.now.time}</p>
+                        <p class="">Date: </p>
+                        <p class="">Timezone: {!v.weather.timezone}</p>
+                    </div>
+                </div>
+                </aura:if>
+            </div>
+            <div class="slds-size_6-of-12 slds-grid slds-grid_align-center">
+                <div class="search-box">
+                    <div class="slds-p-right_x-small">
+                        <ui:inputText value="{! v.value }"
+                                      label="{!v.label}"
+                                      placeholder="{!v.placeholder}"
+                                      errors="{!v.errors}"
+                                      keyup="{!c.onKeyPress}" />
+                        
+                    </div>
+                    <div class="search-btn slds-p-left_x-small">
+                        <button class="slds-button slds-button_brand" onclick="{!c.onClick}">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_2-of-12 slds-p-left_large">
+                <aura:if isTrue="{!v.hasHistory}">
+                    <div class="weather-box">
+                        <div class="head">
+                            <h1>History</h1>
+                        </div>
+                        <div class="body-item slds-p-around_x-small">
+
+                            <aura:iteration items="{!v.searchHistory}" var="item" >
+                                <div class="item-link">
+                                    
+                                    <a onclick="{!c.onItemClick}" name="{! item}"><span class="slds-badge">{! item}</span></a>
+                                    
+                                </div>
+                            </aura:iteration>
+                            
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+        
+        <aura:if isTrue="{!v.weather.length != 0}">
+        <div aura:id="weather" class="slds-hide">
+            
+            <div class="slds-grid slds-wrap slds-p-vertical_medium">
+                <div class="slds-size_2-of-12">
+                    <div class="weather-box">
+                        <div class="head-now">
+                            <h1>Now</h1>
+                        </div>
+                        <div class="body slds-p-vertical_small">
+                            <div class="icon">
+                                <img src="{!$Resource.bluewolf + '/img/ico/'+ v.weather.now.icon +'.png'}" alt="Bluewolf Logo"/>
+                            </div>
+                            <div class="temperature slds-p-vertical_xx-small">
+                                <p>{!v.weather.now.temperatureCelsius} &#8451;</p>
+                            </div>
+                            <div class="summary slds-p-bottom_x-small">
+                                <p>{!v.weather.now.summary}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slds-size_10-of-12 slds-p-left_medium">
+                    <div class="weather-box">
+                        <div class="head">
+                            <h1>Today</h1>
+                        </div>
+                        <div class="slds-grid">
+                            <aura:iteration items="{!v.weather.today}" var="today">
+                                <div class="slds-col body">
+                                    
+                                    <div class="time">
+                                        <p>{!today.time}</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="{!$Resource.bluewolf + '/img/ico/'+ today.icon +'.png'}" alt="Bluewolf Logo"/>
+                                    </div>
+                                    <div class="temperature slds-p-vertical_xx-small">
+                                        <p>{!today.temperatureCelsius} &#8451;</p>
+                                    </div>
+                                    
+                                    <div class="summary slds-p-bottom_x-small">
+                                        <p>{!today.summary}</p>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </div> 
+                
+                
+                <div class="slds-size_1-of-1 slds-p-vertical_medium">
+                    <div class="weather-box">
+                        <div class="head">
+                            <h1>Tonight</h1>
+                        </div>
+                        <div class="slds-grid">
+                            <aura:iteration items="{!v.weather.night}" var="night">
+                                <div class="slds-col body-tonight">
+                                    <div class="time">
+                                        <p>{!night.time}</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="{!$Resource.bluewolf + '/img/ico/'+ night.icon +'.png'}" alt="Bluewolf Logo"/>
+                                    </div>
+                                    <div class="temperature slds-p-vertical_xx-small">
+                                        <p>{!night.temperatureCelsius} &#8451;</p>
+                                    </div>
+                                    
+                                    <div class="summary slds-p-bottom_x-small">
+                                        <p>{!night.summary}</p>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slds-size_1-of-1 slds-p-vertical_medium">
+                    <div class="weather-box">
+                        <div class="head">
+                            <h1>Tomorrow</h1>
+                        </div>
+                        <div class="slds-grid">
+                            <aura:iteration items="{!v.weather.tomorrow.morning}" var="morning">
+                                <div class="slds-col body-tomorrow">
+                                    <div class="time">
+                                        <p>{!morning.time}</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="{!$Resource.bluewolf + '/img/ico/'+ morning.icon +'.png'}" alt="Bluewolf Logo"/>
+                                    </div>
+                                    <div class="temperature slds-p-vertical_xx-small">
+                                        <p>{!morning.temperatureCelsius} &#8451;</p>
+                                    </div>
+                                    
+                                    <div class="summary slds-p-bottom_x-small">
+                                        <p>{!morning.summary}</p>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                        
+                        <div class="slds-grid top-separator">
+                            <aura:iteration items="{!v.weather.tomorrow.daytime}" var="daytime">
+                                <div class="slds-col body-tomorrow">
+                                    <div class="time">
+                                        <p>{!daytime.time}</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="{!$Resource.bluewolf + '/img/ico/'+ daytime.icon +'.png'}" alt="Bluewolf Logo"/>
+                                    </div>
+                                    <div class="temperature slds-p-vertical_xx-small">
+                                        <p>{!daytime.temperatureCelsius} &#8451;</p>
+                                    </div>
+                                    
+                                    <div class="summary slds-p-bottom_x-small">
+                                        <p>{!daytime.summary}</p>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                        
+                        <div class="slds-grid top-separator">
+                            <aura:iteration items="{!v.weather.tomorrow.evening}" var="evening">
+                                <div class="slds-col body-tomorrow">
+                                    <div class="time">
+                                        <p>{!evening.time}</p>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="{!$Resource.bluewolf + '/img/ico/'+ evening.icon +'.png'}" alt="Bluewolf Logo"/>
+                                    </div>
+                                    <div class="temperature slds-p-vertical_xx-small">
+                                        <p>{!evening.temperatureCelsius} &#8451;</p>
+                                    </div>
+                                    
+                                    <div class="summary slds-p-bottom_x-small">
+                                        <p>{!evening.summary}</p>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </aura:if>
+    </div>
+</aura:component>

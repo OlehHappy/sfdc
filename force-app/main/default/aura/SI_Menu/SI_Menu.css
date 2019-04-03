@@ -1,0 +1,51 @@
+.THIS {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    background: transparent;
+    transition: transform 0.3s ease-in-out;
+}
+.THIS .main-head {
+    overflow: hidden;
+    background: #fff;
+    padding: 0 25px;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px transparent solid;
+    backface-visibility: hidden;
+}
+.THIS .main-head > ul {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    list-style: none;
+}
+.THIS .main-head > ul > li {
+    padding-right: 20px;
+    color: #B7B7B7;
+}
+.THIS .main-head > ul > li > a {
+	color: #4A4A4A;    
+}
+.THIS .main-logo {
+    position: absolute;
+    height: 33px;
+    width: 146px;
+    margin-left: -73px;
+    bottom: 0;
+    left: 50%;
+    display: inline-block;
+}
+.THIS .main-logo img {
+    width: 146px;
+    height: 33px;
+}

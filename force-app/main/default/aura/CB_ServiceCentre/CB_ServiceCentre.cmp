@@ -1,0 +1,61 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    
+    <div class="service-centre">
+        <div class="service-head">
+            <h1>Service centre</h1>    
+        </div>
+        <div class="service-content">
+            <div class="slds-grid slds-wrap" style="padding: 15px 20px;">
+                <div class="slds-size_1-of-1 slds-grid" style="padding-bottom: 15px;">
+                    <div class="service-lbl" style="padding-right: 10px;">
+                        <p>Manage your regular payments – such as Direct Debits and standing orders – online and in the Clouderia Mobile Banking app.</p>
+                    </div>
+                    
+                    <div class="service-icon">
+                        <lightning:icon iconName="custom:custom102" variant="custom102" size="large" />
+                    </div>
+                    
+                </div> <!-- end of el -->
+                
+                
+                <div class="slds-size_1-of-1 slds-grid slds-wrap" style="border-top: solid 1px #bfdfed; padding-top: 15px; padding-bottom: 15px;">
+                    <div class="slds-size_1-of-1">
+                        <div class="service-title slds-grid">
+                            <div class="service-lbl">
+                                <a>Change of address?</a>
+                            </div>
+                            <div class="service-icon">
+                                <lightning:icon iconName="standard:custom" variant="custom" size="large" />
+                            </div>
+                        </div>
+                        
+                    </div>                                        
+                    <div class="slds-size_1-of-1">
+                        <p>Manage your regular payments – such as Direct Debits and standing orders – online and in the ys Clouderia Mobile Banking app.</p>                                            
+                    </div>
+                </div> <!-- end of el -->
+                
+                <div class="slds-size_1-of-1 slds-grid slds-wrap" style="border-top: solid 1px #bfdfed; padding-top: 15px;">
+                    <div class="slds-size_1-of-1">
+                        <div class="service-title slds-grid">
+                            <div class="service-lbl">
+                                <a>Statement preferences</a>
+                            </div>
+                            <div class="service-icon">
+                                <lightning:icon iconName="custom:custom111" variant="custom111" size="large" />
+                            </div>
+                        </div>
+                        
+                    </div>                                        
+                    <div class="slds-size_1-of-1">
+                        <p>Tell us how you'd like to receive your statements and other letters from us.</p>                                            
+                    </div>
+                </div> <!-- end of el -->
+                
+            </div> <!-- end-of-main-wrap -->
+            
+        </div>
+    </div> <!-- service centre -->
+</aura:component>

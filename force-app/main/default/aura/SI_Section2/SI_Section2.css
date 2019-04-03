@@ -1,0 +1,31 @@
+.THIS .section-main {
+    background: url("/diego/resource/1509531151000/diego/img/bg-flood.png") center top no-repeat,url("/diego/resource/1509531151000/diego/img/bg-flood-water.png") center bottom -2px repeat-x;
+    background-size: 1281px 680px, 1366px 140px;
+    align-items: flex-start;
+    height: 680px;
+    padding-top: 85px;
+    border-bottom: 2px #4A4A4A solid;
+}
+.THIS .hp-section {
+    position: relative;
+    text-align: center;
+    display: flex;
+}
+.THIS .body {
+    max-width: 720px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.THIS .body h2 {
+    padding-bottom: 10px;
+    color: #4A4A4A;
+    text-transform: capitalize;
+    font-size: 46px;
+    font-weight: 700;
+}
+.THIS .body p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #4A4A4A;
+    padding: 0 30px;
+}

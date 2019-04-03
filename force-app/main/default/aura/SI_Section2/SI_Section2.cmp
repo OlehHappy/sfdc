@@ -1,0 +1,13 @@
+<aura:component access="global"
+                implements="forceCommunity:availableForAllPageTypes">
+    
+    <div>
+    	<div class="section-main hp-section">
+        	<div class="body">
+                <h2>Renters and Home Insurance For Urban Dwellers</h2>
+                <p>Lemonade's amazing coverage protects the stuff you own at home and everywhere else.</p>
+            </div>
+        </div>
+    </div>
+	
+</aura:component>

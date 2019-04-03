@@ -1,0 +1,41 @@
+.THIS {
+    display: flex;
+}
+.THIS .full-width {
+    width: 14%;
+}
+.THIS .menu-item {
+    
+}
+.THIS .menu-btn {
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 0;
+    text-align: center;
+    padding: 10px 15px;
+}
+.THIS .menu-item .first-item {
+    border-radius: 5px 0 0 5px;
+}
+.THIS .menu-item .last-item {
+    border-radius: 0 5px 5px 0;
+    border-width: 1px;
+}
+.THIS .menu-btn:hover {
+    background-color: #007eb6;
+}
+.THIS .menu-btn .home-ico .slds-icon {
+    fill: #007eb6;
+    width: 1em;
+    height: 1em;
+}
+.THIS .menu-btn:hover .home-ico .slds-icon {
+    fill: #fff;
+}
+.THIS .menu-btn > a {
+    color: #007eb6;
+}
+.THIS .menu-btn:hover > a {
+    color: #fff;
+}

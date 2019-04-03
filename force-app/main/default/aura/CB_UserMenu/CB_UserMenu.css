@@ -1,0 +1,64 @@
+.THIS .user-notify {
+    text-align: center;
+    margin: auto;
+    padding-right: 50px;
+}
+.THIS .user-notify > div {
+    padding: 0 15px;
+}
+.THIS .user-notify .icon .slds-icon_container--circle {
+    background: transparent;
+}
+.THIS .user-notify .icon .slds-icon, 
+.THIS .user-notify .icon .slds-icon {
+    fill: #007eb6
+}
+.THIS .user-notify .icon > p {
+    color: #007eb6;
+    font-size: 14px;
+    padding-top: 6px;
+}
+.THIS .user-controls {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 5px 5px;
+    background: #eee;
+}
+.THIS .user-controls .customer-name {
+    padding: 10px 10px;
+}
+.THIS .user-controls .customer-name > span {
+    color: #00395d;
+    font-size: 16px;
+}
+.THIS .user-controls .logout-btn {
+    text-align: right;
+    padding: 20px 10px;
+}
+.THIS .user-controls .logout-btn .blue-btn {
+    background: #007eb6;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 5px 5px;
+    font-size: 14px;
+}
+.THIS .user-controls .user-preferences {
+    border-top: 1px solid #ccc;
+    background-color: #d9ecf4;
+}
+.THIS .user-controls .user-preferences {
+    text-align: center;
+}
+.THIS .user-controls .user-preferences .icon .slds-icon {
+    width: 1em;
+    height: 1em;
+}
+.THIS .user-controls .user-preferences .icon .slds-icon-text-default {
+    fill: #00395d;
+}
+.THIS .user-controls .slds-dropdown-trigger {
+    width: 100%;
+}
+.THIS .user-controls .slds-dropdown {
+    width: 300px;
+}

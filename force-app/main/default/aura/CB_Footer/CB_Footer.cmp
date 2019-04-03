@@ -1,0 +1,10 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <div>
+        <div class="footer">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor magna at risus finibus, non ullamcorper nibh fringilla. Aliquam quam felis, interdum sit amet tempus porttitor, euismod ac lectus. Etiam quis vestibulum lacus. Ut in risus ornare enim bibendum euismod eget sed urna. Vivamus quam diam, aliquam eget lorem ullamcorper, pellentesque pharetra nisi. Praesent nulla arcu, molestie pharetra odio quis, elementum tempor nulla. Quisque ac diam vel lectus mollis vulputate vitae sit amet ante. Phasellus eu maximus orci. Maecenas nulla erat, lacinia id nibh at, dapibus laoreet nibh. Mauris quis tempor risus, eget congue ante.</p>
+            <p>Duis luctus ut nisi eu varius. Duis sagittis erat nec ornare condimentum. Vivamus scelerisque, lacus in maximus porta, elit magna semper eros, at fermentum nisi leo quis sem. Ut condimentum congue sapien a auctor. Nunc mattis vulputate tellus. Aliquam id libero faucibus, finibus dui ac, euismod nibh. Ut congue, risus vestibulum imperdiet commodo, libero lorem mollis enim, a dapibus elit sapien vitae arcu. Morbi congue laoreet dignissim.</p>
+        </div> <!-- end footer -->
+    </div>
+</aura:component>

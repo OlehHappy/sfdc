@@ -1,0 +1,1089 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+            <meta name="sitename" content="Clouderia Bank" />
+            <title>Home page - Clouderia Online Banking</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+            
+            <apex:stylesheet value="{!URLFOR($Resource.Page_Layout_Files, 'css/main.css')}"/>
+            
+            <apex:includeScript value="{!URLFOR($Resource.Page_Layout_Files, 'js/jquery-1.11.3.min.js')}" id="style0"/>
+            <apex:includeScript value="{!URLFOR($Resource.Page_Layout_Files, 'js/jquery.matchHeight-min.js')}" id="style1"/>
+            <apex:includeScript value="{!URLFOR($Resource.Page_Layout_Files, 'js/jquery-migrate-1.2.1.min.js')}" id="style2"/>
+            <style>
+                .main-wrapper {
+                  width: 1280px;
+                  margin: auto !important;
+                  padding-top: 30px;
+                }
+                .top-menu ul {
+                  font-size: 16px;
+                }
+                .top-menu ul > li > a {
+                  color: #007EB6;
+                    font-size: 0.8em;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                .top-menu ul > li > a:hover {
+                  text-decoration: underline;
+                }
+
+                .header {
+                	padding-top: 30px;
+                	padding-bottom: 10px;
+                }
+                
+                .logo {
+                  padding-top: 30px;
+                }
+                
+                .user-menu {
+					float: right;
+                }
+                .user-notify {
+                	text-align: center;
+                	margin: auto;
+                	padding-right: 50px;
+                }
+                .user-notify > div {
+                	padding: 0 15px;
+                }
+                .user-notify .icon .slds-icon_container_circle {
+                	background: #007eb6
+                }
+                .user-notify .icon > p {
+                	color: #00395d;
+                	font-weight: bold;
+                	padding-top: 6px;
+                }
+                .user-controls {
+                	width: 300px;
+                   border: 1px solid #ccc;
+                   border-radius: 5px 5px 5px 5px;
+                   background: #eee;
+                 }
+                .user-controls .customer-name {
+                	padding: 10px 10px;
+                }
+                .user-controls .customer-name > span {
+                   color: #00395d;
+                   font-size: 1.2em
+                 }
+                .user-controls .logout-btn {
+                	text-align: right;
+                	padding: 20px 10px;
+                }
+                .user-controls .logout-btn .blue-btn {
+                   background: #007eb6 !important;
+                   color: #fff;
+                   padding: 8px 8px;
+                   border-radius: 5px 5px;
+                }
+                 .user-controls .user-preferences {
+                   border-top: 1px solid #ccc;
+                   background-color: #d9ecf4;
+                 }
+                .user-controls .user-preferences {
+                	text-align: center;
+                }
+                .user-controls .user-preferences .icon .slds-icon {
+                	fill: #00395d;
+                }
+                .user-controls .slds-dropdown-trigger {
+                	width: 100%;
+                }
+                .user-controls .slds-dropdown {
+                	width: 300px;
+                }
+
+                .main-menu {
+                	padding: 20px 0;
+                	display: flex;
+                }
+                .main-menu .full-width {
+                	width: 14%;
+                }
+				.main-menu .menu-item {
+
+                }
+                .main-menu .menu-btn {
+                    border-width: 1px 0 1px 1px;
+                    border-style: solid;
+                    border-color: #ccc;
+                    border-radius: 0;
+                	text-align: center;
+                	padding: 10px 15px;
+                }
+                .main-menu .menu-item .first-item {
+                  border-radius: 5px 0 0 5px;
+                }
+                .main-menu .menu-item .last-item {
+                  border-radius: 0 5px 5px 0;
+                  border-width: 1px;
+                }
+                .main-menu .menu-btn:hover {
+                	background-color: #007eb6;
+                }
+                .main-menu .menu-btn .home-ico .slds-icon {
+                	fill: #007eb6;
+                	width: 20px;
+                	height: 20px;
+                }
+                .main-menu .menu-btn:hover .home-ico .slds-icon {
+                	fill: #fff;
+                }
+                .main-menu .menu-btn > a {
+                	color: #007eb6;
+                    font-size: 1.25em;
+                }
+                .main-menu .menu-btn:hover > a {
+                	color: #fff;
+                }
+
+                .right-col {
+                	padding-left: 30px;
+                }
+                
+                .ui-header {
+                	background-color: #007eb6;
+                	color: #fff;
+                	padding: 10px 20px;
+                	border: solid 1px #007eb6;
+					border-radius: 3px 3px 0 0;
+                	marging: 20px 0;
+                }
+                .ui-header .ui-title {
+                	font-size: 22px;
+                	margin-left: 20px;
+                }
+                .ui-header .second-col {
+                	margin: auto;
+                }
+                .ui-header .ui-options {
+                	float: right;
+                	margin-right: 15px;
+                	font-size: 14px;
+                }
+                
+                .ui-txt > p {
+                	padding: 30px 0 20px 10px;
+                	font-size: 16px;
+                	color: #00395d;
+                }
+                
+                .help-center {
+                	border: 1px solid #ffbe10;
+					background: #ffefc3;
+                	border-radius: .25em;
+                }
+				.help-center .hlpcenter-head {
+                	background: #ffce4c;
+                }
+                .help-center .hlpcenter-head > h1 {
+                	color: #00395d;
+                	font-size: 18px;
+                	padding: 15px 30px;
+                }
+                .help-center .hlpcenter-content a.link {
+					display: flex;
+                	color: #069;
+                	font-size: 15px;
+                	
+                }
+                .help-center .hlpcenter-content a.link .icon,
+                .help-center .hlpcenter-content a.link .txt {
+                	margin: auto 0;
+                }
+                .help-center .hlpcenter-content a.link .txt {
+                	padding: 0 15px;
+                }
+                
+                .help-center ul.links-tbl > li {
+                	padding: 15px 0 15px 30px;
+                }
+                .help-center ul.links-tbl > li.bordered {
+					border-bottom: 1px solid #ffdf8b;
+                }
+                
+                .service-centre {
+                	background: #e5f2f8;
+                	border: solid 1px #bfdfed !important;
+                	border-radius: .25em;
+                }
+                .service-centre .service-head {
+                    background: #0072b6;
+                    padding: 15px 30px;
+                	border-radius: .25em .25em 0 0;
+                }
+                .service-centre .service-head > h1 {
+                    font-size: 18px;
+                    color: #fff;
+                }
+                .service-centre .service-title {
+                	padding-bottom: 10px;
+                }
+                .service-centre .service-lbl {
+                	width: 80%;
+                }
+                .service-centre .service-icon {
+                	width: 20%;
+                	padding-left: 5px;
+                }
+                .service-centre .service-lbl > a {
+                	color: #007eb6;
+                	font-size: 20px;
+                }
+                .service-centre .service-icon > span {
+               		background-color: #007eb6;
+                }
+      
+                .head-title {
+                	padding: 10px 10px;
+                }
+                .head-title > h3 {
+                	font-size: 33px;
+                	color: #00395d;
+                }
+                .head-title .additional > p {
+                	font-size: 14px;
+                	color: #666;
+                }
+                
+                .progress-bar {
+
+                }
+                .progress-bar > ul {
+                    list-style: none;
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    overflow: hidden;
+                    border: 1px;
+                    border-radius: 5px;
+                    text-align: center;
+                	border-color:  #f5f5f5 #e5e5e5 #d4d4d4;
+                	border-style: solid;
+                }
+                .progress-bar > ul > li {
+	                display: table-cell;
+                    padding: 0.7em 1em 0.7em 2em;
+                    color: #036;
+                    background-color: #fff;
+                }
+                .progress-bar > ul > li:before,
+                .progress-bar > ul > li:after {
+                    left: 100%;
+                    top: 50%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+                .progress-bar > ul > li:before {
+                    border-color: rgba(0, 153, 148, 0);
+                    border-left-color: #ccc;
+                    border-width: 24px;
+                    margin-top: -24px;
+                }
+                .progress-bar > ul > li:after {
+                    border-color: rgba(0, 153, 148, 0);
+                    border-width: 23px;
+                    margin-top: -23px;
+                    border-left-color: #fff;
+                }
+                .progress-bar li.active {
+                    background-color: #007eb6;
+                    color: #fff;
+                	position: relative;
+                	z-index: 2;
+                }
+                .progress-bar > ul > li.active:after {
+	                border-left-color: #007eb6;                
+                }
+                .progress-bar li.not-active {
+                	position: relative;
+                	z-index: 1;
+                }
+                
+                .base-form {
+                	width: 100%;
+                	border: 1px solid #ccc;
+                	border-radius: 5px;
+                	margin: 20px 0;
+                }
+                .base-form .form-header {
+                	background-color: #007eb6;
+                	color: #fff;
+                	padding: 10px 20px;
+                	border-top-left-radius: 3px;
+                	border-top-right-radius: 3px;
+                }
+                .base-form .form-header > h3 {
+                	font-size: 2em;
+                }
+                .base-form .form-body {
+                	border-left: 50px solid #eee;
+					border-bottom-left-radius: 5px;
+					padding: 30px 10px 30px 20px;
+                }
+                .base-form .form-body .info-msg {
+                	padding: 0 20px 25px 15px;
+                }
+                .base-form .form-body .info-msg .slds-box {
+                	display: flex;
+                	background: #e5f2f8;
+                }
+                .base-form .form-body .info-msg .txt {
+                	margin: auto 0;
+                	padding: 0 15px;
+                }
+                .base-form .form-label {
+                	color: #00395d;
+                	font-size: 1.25em;
+                }
+                
+                .tab-nav > ul > li {
+                	font-size: 16px;
+                	padding: 0 20px;
+                	width: 33%;
+                	text-align: center;
+                	font-weight: bold;
+                	color: #036;
+                }
+                .search-box {
+                	padding: 10px 0 20px 0;
+                	width: 50%;
+                }
+                
+                .btn-grid {
+                	padding: 20px 0;
+                }
+                .btn-grid .save-btn {
+                	padding-right: 10px;
+                }
+                .btn-grid .cancel-btn {
+                	padding-left: 10px;
+                }
+                .btn-grid .save-btn > button {
+                	background-color: #007eb6;
+                	color: #fff;
+                	font-size: 15px;
+                }
+                .btn-grid .cancel-btn > button {
+                	font-size: 15px;
+                }
+                
+                .footer {
+                	border-color: #ccc;
+                	border-style: solid;
+                	border-width: 1px 0 0 0;
+                	padding: 20px 10px;
+                	margin: 20px 0;
+                }
+                .footer > p {
+                	padding: 10px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="slds-scope">
+                <div class="slds-grid slds-wrap slds-grid_pull-padded main-wrapper">
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 top-menu">
+                        <ul class="slds-list_horizontal slds-has-block-links_space slds-float_right">
+                            <li>
+                                <a href="javascript:void(0);" tabindex="3">Mobile site</a>
+                            </li>    
+                            <li>
+                                <a href="javascript:void(0);" target="_blank" title="clouderiabank.com (opens in a new browser window)" rel="noreferrer" tabindex="4">Clouderiabank.com</a>
+                            </li>    
+                            <li>
+                                <a href="javascript:void(0);" target="_blank" title="Important info (opens in a new browser window)" rel="noreferrer" tabindex="5">Important info</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" target="_blank" title="Privacy policy (opens in a new browser window)" rel="noreferrer" tabindex="6">Privacy policy</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" target="_blank" title="Security (opens in a new browser window)" rel="noreferrer" tabindex="7">Security</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="contactUs" tabindex="8">Contact us</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" target="_blank" title="Accessibility (opens in a new browser window)" rel="noreferrer" tabindex="9">Accessibility</a>
+                            </li>
+                            <li>
+                                <a id="icookieSetting" href="javascript:void(0);" tabindex="10">Cookies</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 header">
+                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <div class="slds-col">
+                                <div class="logo">
+                                    <a>
+                                        <apex:image url="{!URLFOR($Resource.Page_Layout_Files, 'img/logo.png')}"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-grid user-menu">
+                                    <div class="slds-grid user-notify">
+                                        <div>
+                                            <a class="icon" href="javascript:void(0);">
+                                                <span class="slds-icon_container slds-icon_container_circle slds-icon-action-email" title="Description of icon when needed">
+                                                    <svg class="slds-icon" aria-hidden="true">
+                                                        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#email')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                    </svg>
+                                                </span>
+                                                <p>Messages</p>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="icon" href="javascript:void(0);">
+                                                <span class="slds-icon_container slds-icon_container_circle slds-icon-action-announcement" title="Description of icon when needed">
+                                                    <svg class="slds-icon" aria-hidden="true">
+                                                        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#announcement')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                    </svg>
+                                                </span>
+                                                <p>Notifications</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="user-controls">
+                                        <div class="slds-grid slds-wrap">
+                                            <div class="slds-p-horizontal_small slds-size_1-of-2">
+                                                <div class="customer-name">
+                                                	<span>Mr Clouderia Client</span>    
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="slds-p-horizontal_small slds-size_1-of-2">
+                                                <div class="logout-btn">
+                                                	<a class="blue-btn" href="javascript:void(0);"><span>Log out</span></a>        
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-dropdown-trigger">
+                                                    <div class="user-preferences">
+                                                        
+                                                        <div class="icon">                                                        
+                                                            <span class="slds-icon_container slds-icon-utility-down icon" title="Description of icon when needed">
+                                                                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                                                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#down')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                </svg>
+                                                                <span class="slds-assistive-text">Description of icon</span>
+                                                            </span>    
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="slds-dropdown">
+                                                        <ul class="slds-dropdown__list" role="menu">
+                                                            <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                                                <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                                            </li>
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                                    <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                                    <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                                                <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                                            </li>
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                                    <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                                    <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div> <!-- end dropdown item -->
+
+                                            </div> 
+                                        </div>
+                                        
+                                    </div> <!-- user-controls -->
+            
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="main-menu">
+                            <div class="menu-item">
+                                <div class="menu-btn first-item" onclick="onHomeMenu()" aria-haspopup="true" title="Move money">
+                                    <a class="home-ico" href="javascript:void(0);">
+                                        <span class="slds-icon_container slds-icon-utility-home" title="Description of icon when needed">
+                                            <svg class="slds-icon" aria-hidden="true">
+                                                <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#home')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                            </svg>
+                                            <span class="slds-assistive-text">Description of icon</span>
+                                        </span> 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Move money">
+                                    <a>Move money</a>                                
+                                </div>
+                                
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Manage accounts">
+                                    <a>Manage accounts</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Borrow">
+                                    <a>Borrow</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Save">
+                                    <a>Save</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Invest">
+                                    <a>Invest</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn" onclick="onHomeMenu()" aria-haspopup="true" title="Insure">
+                                    <a>Insure</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                            
+                            <div class="slds-dropdown-trigger menu-item full-width">
+                                <div class="menu-btn last-item" onclick="onHomeMenu()" aria-haspopup="true" title="Rewards">
+                                    <a>Rewards</a>
+                                </div>
+                                <div class="slds-dropdown slds-dropdown_left slds-dropdown_small">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__header slds-truncate" title="Menu Sub Heading" role="separator">
+                                            <span class="slds-text-title_caps">Menu Sub Heading</span>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end menu item -->
+                        </div> <!-- end main menu -->
+                    </div> <!-- slds-size_1-of-1 -->
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="head-title">
+                            <h3>Order replacement card</h3>
+                            
+                        </div> <!-- end head-title -->
+                    </div> <!-- end slds-size_1-of-1 GRID -->  
+
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_8-of-12">
+                                
+                                <div class="main-content">
+                                    <div class="slds-grid slds-wrap">
+                                        
+                                        <div class="slds-size_1-of-1">
+                                            <div class="progress-bar">
+                                                <ul>
+                                                    <li class="first active">Card details</li>
+                                                    <li class="not-active">Confirmation</li>
+                                                    <li class="last">Complete</li>
+                                                </ul>
+                                                
+                                            </div> <!-- end progress bar -->                                            
+                                        </div>
+                                        
+                                        <div class="slds-size_1-of-1">
+                                            <div class="ui-txt">
+                                                <p>All fields are mandatory</p>
+                                            </div>    
+                                        </div>
+                                        
+										<div class="slds-size_1-of-1">
+                                            <div class="base-form">
+                                                
+                                                <div class="form-header">
+                                                    <h3>Confirm payment details</h3>                            
+                                                </div>
+                                                
+                                                <div class="form-body">
+                                                    <div class="slds-form slds-form_stacked" style="padding-bottom: 20px;">
+                                                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                                            <div class="slds-p-horizontal_small slds-size_2-of-6">
+                                                                <h3 class="form-label">Payer</h3>
+                                                            </div>
+                                                            <div class="slds-p-horizontal_small slds-size_4-of-6">
+                                                                <div class="slds-form-element" style="width: 70%;">
+                                                                    <label class="slds-form-element__label" for="text-input-id-1">Current Account</label>
+                                                                    <div class="slds-form-element__control">
+                                                                        <input readonly="readonly" class="slds-input" value="20-91-79 23776018" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-form slds-form_stacked slds-border_top" style="padding: 20px 0;">
+                                                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                                            <div class="slds-p-horizontal_small slds-size_2-of-6">
+                                                                <h3 class="form-label">Payee</h3>
+                                                            </div>
+                                                            <div class="slds-p-horizontal_small slds-size_4-of-6">
+                                                                <div class="slds-form-element" style="width: 70%;">
+                                                                    <label class="slds-form-element__label" for="text-input-id-1">A IRIMIEA</label>
+                                                                    <div class="slds-form-element__control">
+                                                                        <input readonly="readonly" class="slds-input" value="20-29-41 70591890" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-form slds-form_stacked slds-border_top" style="padding: 20px 0;">
+                                                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                                            <div class="slds-p-horizontal_small slds-size_2-of-6">
+                                                                <h3 class="form-label">Amount</h3>
+                                                            </div>
+                                                            <div class="slds-p-horizontal_small slds-size_4-of-6">
+                                                                <div class="slds-form-element" style="width: 70%;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <input readonly="readonly" class="slds-input" value="$700 USD" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-form slds-form_stacked slds-border_top" style="padding: 20px 0;">
+                                                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                                            <div class="slds-p-horizontal_small slds-size_2-of-6">
+                                                                <h3 class="form-label">Date</h3>
+                                                            </div>
+                                                            <div class="slds-p-horizontal_small slds-size_4-of-6">
+                                                                <div class="slds-form-element" style="width: 70%;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <input readonly="readonly" class="slds-input" value="2 Oct 2017, 14:00" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-form slds-form_stacked slds-border_top" style="padding-top: 20px;">
+                                                        <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                                                            <div class="slds-p-horizontal_small slds-size_2-of-6">
+                                                                <h3 class="form-label">Reference</h3>
+                                                            </div>
+                                                            <div class="slds-p-horizontal_small slds-size_4-of-6">
+                                                                <div class="slds-form-element" style="width: 70%;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <input readonly="readonly" class="slds-input" value="Paying for delivery" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>         
+                                                    
+                                                </div> <!-- end form body -->
+                                            </div> <!-- end base form -->
+                
+                                        </div> <!-- slds-size_1-of-1 -->
+                                        
+                                    </div> <!-- end-of-slds-grid -->
+                                </div> <!-- end-of-main-content -->
+                                
+                            </div> <!-- end-slds-size_8-of-12 -->
+                            
+                            <div class="slds-size_4-of-12">
+                                <div class="right-col">
+                                    <div class="slds-size_1-of-1">
+                                        <div class="help-center">
+                                            <div class="hlpcenter-head">
+                                                <h1>Need help?</h1>    
+                                            </div>
+                                            <div class="hlpcenter-content">
+                                                <ul class="links-tbl">
+                                                    <li class="bordered">
+                                                        <a class="link">
+                                                            <span class="slds-icon_container slds-icon-utility-announcement icon" title="Description of icon when needed">
+                                                                <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                                                                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                </svg>
+                                                                <span class="slds-assistive-text">Description of icon</span>
+                                                            </span>
+                                                            <span class="txt">How long will it take for my payment to be processed?</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="bordered">
+                                                        <a class="link">
+                                                            <span class="slds-icon_container slds-icon-utility-announcement icon" title="Description of icon when needed">
+                                                                <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                                                                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                </svg>
+                                                                <span class="slds-assistive-text">Description of icon</span>
+                                                            </span>
+                                                            <span class="txt">Why do I need this?</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="link">
+                                                            <span class="slds-icon_container slds-icon-utility-announcement icon" title="Description of icon when needed">
+                                                                <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                                                                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                </svg>
+                                                                <span class="slds-assistive-text">Description of icon</span>
+                                                            </span>
+                                                            <span class="txt">Keep your details safe</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end slds-size_1-of-1 GRID -->
+                                    
+                                    <div class="slds-size_1-of-1" style="padding-top: 20px;">
+                                        <div class="service-centre">
+                                            <div class="service-head">
+                                                <h1>Service centre</h1>    
+                                            </div>
+                                            <div class="service-content">
+                                                <div class="slds-grid slds-wrap" style="padding: 15px 20px;">
+                                                    <div class="slds-size_1-of-1 slds-grid" style="padding-bottom: 15px;">
+                                                        <div class="service-lbl" style="padding-right: 10px;">
+                                                            <p>Manage your regular payments – such as Direct Debits and standing orders – online and in the Clouderia Mobile Banking app.</p>
+                                                        </div>
+                                                        
+                                                        <div class="service-icon">
+                                                            <span class="slds-icon_container slds-icon-custom-custom5" title="Description of icon when needed">
+                                                                <svg class="slds-icon slds-icon_large" aria-hidden="true">
+                                                                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/custom-sprite/svg/symbols.svg#custom102')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                </svg>
+                                                                <span class="slds-assistive-text">Description of icon</span>
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    </div> <!-- end of el -->
+                                                    
+                                                    
+                                                    <div class="slds-size_1-of-1 slds-grid slds-wrap" style="border-top: solid 1px #bfdfed; padding-top: 15px; padding-bottom: 15px;">
+                                                        <div class="slds-size_1-of-1">
+                                                            <div class="service-title slds-grid">
+                                                                <div class="service-lbl">
+                                                                    <a>Change of address?</a>
+                                                                </div>
+                                                                <div class="service-icon">
+                                                                    <span class="slds-icon_container slds-icon-custom-custom5" title="Description of icon when needed">
+                                                                        <svg class="slds-icon slds-icon_large" aria-hidden="true">
+                                                                            <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#custom')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                        </svg>
+                                                                        <span class="slds-assistive-text">Description of icon</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>                                        
+                                                        <div class="slds-size_1-of-1">
+                                                            <p>Manage your regular payments – such as Direct Debits and standing orders – online and in the ys Clouderia Mobile Banking app.</p>                                            
+                                                        </div>
+                                                    </div> <!-- end of el -->
+                                                    
+                                                    <div class="slds-size_1-of-1 slds-grid slds-wrap" style="border-top: solid 1px #bfdfed; padding-top: 15px;">
+                                                        <div class="slds-size_1-of-1">
+                                                            <div class="service-title slds-grid">
+                                                                <div class="service-lbl">
+                                                                    <a>Statement preferences</a>
+                                                                </div>
+                                                                <div class="service-icon">
+                                                                    <span class="slds-icon_container slds-icon-custom-custom5" title="Description of icon when needed">
+                                                                        <svg class="slds-icon slds-icon_large" aria-hidden="true">
+                                                                            <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/custom-sprite/svg/symbols.svg#custom111')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+                                                                        </svg>
+                                                                        <span class="slds-assistive-text">Description of icon</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>                                        
+                                                        <div class="slds-size_1-of-1">
+                                                            <p>Tell us how you'd like to receive your statements and other letters from us.</p>                                            
+                                                        </div>
+                                                    </div> <!-- end of el -->
+                                                    
+                                                </div> <!-- end-of-main-wrap -->
+                                                
+                                            </div>
+                                        </div> <!-- service centre -->
+                                    </div> <!-- end slds-size_1-of-1 GRID -->
+                                </div> <!-- end right-col --> 
+                            </div> <!-- end-slds-size_4-of-12 -->
+                        </div> <!-- end-slds-grid -->
+                        
+                        
+                    </div> <!-- end slds-size_1-of-1 GRID -->
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-grid slds-grid_align-center btn-grid">
+                            <div class="save-btn">
+                                <button class="slds-button slds-button_neutral" onclick="window.location.href='confirm'">Check and confirm details</button>
+                            </div>
+                            <div class="cancel-btn">
+                                <button class="slds-button slds-button_neutral">Cancel</button>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- end slds-size_1-of-1 GRID -->
+
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="footer">
+							<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor magna at risus finibus, non ullamcorper nibh fringilla. Aliquam quam felis, interdum sit amet tempus porttitor, euismod ac lectus. Etiam quis vestibulum lacus. Ut in risus ornare enim bibendum euismod eget sed urna. Vivamus quam diam, aliquam eget lorem ullamcorper, pellentesque pharetra nisi. Praesent nulla arcu, molestie pharetra odio quis, elementum tempor nulla. Quisque ac diam vel lectus mollis vulputate vitae sit amet ante. Phasellus eu maximus orci. Maecenas nulla erat, lacinia id nibh at, dapibus laoreet nibh. Mauris quis tempor risus, eget congue ante.</p>
+                            <p>Duis luctus ut nisi eu varius. Duis sagittis erat nec ornare condimentum. Vivamus scelerisque, lacus in maximus porta, elit magna semper eros, at fermentum nisi leo quis sem. Ut condimentum congue sapien a auctor. Nunc mattis vulputate tellus. Aliquam id libero faucibus, finibus dui ac, euismod nibh. Ut congue, risus vestibulum imperdiet commodo, libero lorem mollis enim, a dapibus elit sapien vitae arcu. Morbi congue laoreet dignissim.</p>
+                        </div> <!-- end footer -->
+                    </div> <!-- end slds-size_1-of-1 -->
+                </div> 
+            </div>            
+        </body>
+    </html>
+    <script type="text/javascript">
+    	function onHomeMenu() {
+        	console.log('olehdebug >>> onHomeClick');
+        }
+    	function onCardReplacement() {
+            var isOpen = $('.slds-dropdown-trigger_click').hasClass('slds-is-open');
+            
+            if (isOpen) {
+            	$('.slds-dropdown-trigger_click').removeClass('slds-is-open');
+            } else {
+            	$('.slds-dropdown-trigger_click').addClass('slds-is-open');
+            }
+        }
+    </script>
+</apex:page>

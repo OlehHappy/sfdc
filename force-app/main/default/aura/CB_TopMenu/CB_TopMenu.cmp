@@ -1,0 +1,33 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" 
+                access="global">
+    
+    <div>
+        <ul class="slds-list_horizontal slds-has-block-links_space slds-float_right">
+            <li>
+                <a href="javascript:void(0);" tabindex="3">Mobile site</a>
+            </li>    
+            <li>
+                <a href="javascript:void(0);" target="_blank" title="clouderiabank.com (opens in a new browser window)" rel="noreferrer" tabindex="4">Clouderiabank.com</a>
+            </li>    
+            <li>
+                <a href="javascript:void(0);" target="_blank" title="Important info (opens in a new browser window)" rel="noreferrer" tabindex="5">Important info</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" target="_blank" title="Privacy policy (opens in a new browser window)" rel="noreferrer" tabindex="6">Privacy policy</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" target="_blank" title="Security (opens in a new browser window)" rel="noreferrer" tabindex="7">Security</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" id="contactUs" tabindex="8">Contact us</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" target="_blank" title="Accessibility (opens in a new browser window)" rel="noreferrer" tabindex="9">Accessibility</a>
+            </li>
+            <li>
+                <a id="icookieSetting" href="javascript:void(0);" tabindex="10">Cookies</a>
+            </li>
+        </ul>
+    </div>
+	
+</aura:component>

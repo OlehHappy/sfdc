@@ -1,0 +1,7 @@
+<aura:component access="global"
+                implements="forceCommunity:availableForAllPageTypes">
+    
+    <div>
+        <img src="{!$Resource.bluewolf + '/img/logo.png'}" alt="Bluewolf Logo"/>
+    </div>
+</aura:component>

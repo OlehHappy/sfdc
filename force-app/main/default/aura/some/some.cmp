@@ -1,0 +1,25 @@
+<aura:component controller="backend" 
+                implements="forceCommunity:availableForAllPageTypes"
+                access="global">
+    
+    <aura:attribute name="record" type="Map" default="{}" />
+    <aura:attribute name="recordPrimary" type="Map" default="{}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.record}" action="{!c.onRecordChange}" />
+    
+    <div>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="input-unique-id">Title</label>
+            <div class="slds-form-element__control">
+                <input id="input-unique-id" class="slds-input" value="{!v.record.Title__c}" type="text" />
+            </div>
+        </div>
+        <force:inputField value="{!v.record.Title__c}"/>
+
+        
+        <a class="slds-button" onclick="{!c.onButton}">Button</a>
+    
+    </div>
+	
+</aura:component>

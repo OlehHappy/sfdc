@@ -1,0 +1,82 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_8-of-12 slds-p-right_small">
+            <div class="acc-details slds-box">
+                <div class="slds-grid slds-wrap acc-content">
+                    <div class="slds-size_1-of-1 main-col slds-grid">
+                        <div class="slds-col slds-p-right_small first-fld">
+                            <a>Everyday Saver</a>
+                            <p>20-91-79 73457915</p>
+                        </div>
+                        <div class="slds-col slds-p-left_medium second-fld">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <div class="slds-combobox_container">
+                                        <ui:inputSelect >
+                                            <ui:inputSelectOption text="Account services"/>
+                                            <ui:inputSelectOption text="Make a payment"/>
+                                        </ui:inputSelect>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                   
+                    </div>
+                    
+                    <div class="slds-size_1-of-1 details-col slds-grid">
+                        <div class="first-fld">
+                            <h3>Available Balance</h3>
+                        </div>
+                        <div class="second-fld">
+                            <h3>$777.88</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-size_1-of-1 last-col slds-grid">
+                        <div class="slds-form-element" style="width: 100%;">
+                            <div class="slds-form-element__control">
+                                <div class="slds-combobox_container">
+                                    <ui:inputSelect >
+                                        <ui:inputSelectOption text="Show my latest transactions"/>
+                                        <ui:inputSelectOption text="Transaction #1"/>
+                                    </ui:inputSelect>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div> <!-- end-acc-detail -->    
+        </div> <!-- end-slds-size_8-of-12 -->
+        
+        <div class="slds-size_4-of-12 slds-p-left_small">
+            <div class="extra-options">
+                
+                <div class="slds-grid slds-wrap" style="padding: 15px 20px;">
+                    <div class="slds-size_1-of-1 slds-grid">
+                        <div class="icon">  
+                            <lightning:icon iconName="custom:custom17" variant="custom17" size="" />
+                        </div>
+                        <div class="title">
+                            <h1>Save for what matters</h1>
+                            <p>And see your savings frow online.</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="slds-size_1-of-1">
+                        <div class="link">
+                            <a>Start saving now</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div> <!-- end-of-extra-options -->
+        </div> <!-- end-of-slds-size_4-of-12 -->
+    </div>
+	
+</aura:component>

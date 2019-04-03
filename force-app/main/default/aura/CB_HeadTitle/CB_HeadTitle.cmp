@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"
+                access="global" >
+    
+    <aura:attribute name="line1" type="String" />
+    <aura:attribute name="line2" type="String" />
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="showAdditions" type="Boolean" default="false"/>
+    
+    <div>
+        <h3>{!v.title}</h3>
+        <aura:if isTrue="{!v.showAdditions}">
+            <div class="additional">
+                <p>
+                    Is this a regular payment?
+                    <a href="#">Set up a standing order</a>
+                </p>    
+            </div>
+        </aura:if>
+    </div>
+	
+</aura:component>

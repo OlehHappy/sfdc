@@ -1,0 +1,30 @@
+<!--
+ - Created by leon on 29.10.18.
+ -->
+
+<aura:component controller="MI_HeaderController" description="MI_header" implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="account" type="Account" access="private" />
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+
+    <div>
+        <aura:if isTrue="{! not(empty(v.account))}">
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+            <div class="slds-col slds-size_4-of-12">
+                <img class="logo" src="{!v.account.Logo_URL__c}" />
+            </div>
+            <div class="slds-col slds-size_8-of-12">
+                <div>
+                    <span class="label">Account Name: </span>
+                    <span>{!v.account.Name}</span>
+                </div>
+
+                <div>
+                    <span class="label">Website: </span>
+                    <a href="{!v.account.Website}">{!v.account.Website}</a>
+                </div>
+
+            </div>
+        </div>
+        </aura:if>
+    </div>
+</aura:component>
