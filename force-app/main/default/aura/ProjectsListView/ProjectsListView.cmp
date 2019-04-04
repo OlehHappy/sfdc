@@ -48,7 +48,7 @@
                             <div class="slds-truncate" title="{!project.Priority__c}">{!project.Priority__c}</div>
                         </td>
                         <td data-label="Owner">
-                            <div class="slds-truncate" title="{!project.OwnerId}">{!project.OwnerId}</div>
+                            <div class="slds-truncate" title="{!project.User__r.Name}">{!project.User__r.Name}</div>
                         </td> 
                     </tr>
                 </aura:iteration>
