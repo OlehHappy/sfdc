@@ -4,55 +4,80 @@
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
-	<div>
-        <div>
-            <button class="slds-button slds-button_outline-brand" 
-                    onclick="{!c.assignForUser}">Assign For Different User</button>
+	<div class="slds-box">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <button class="slds-button slds-button_outline-brand" 
+                    onclick="{!c.assignForUser}">Assign for User</button>
+            </div>
         </div>
-        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
-            <thead>
-                <tr class="slds-line-height_reset">
-                    <th class="slds-text-align_right" scope="col" style="width: 3.25rem;">
-                        <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
-                        <div class="slds-th__action slds-th__action_form">
-                            <div class="slds-checkbox">
-                                    <input type="checkbox" name="options" id="checkbox-163" tabindex="-1" aria-labelledby="check-select-all-label column-group-header" value="checkbox-163" />
-                                    <label class="slds-checkbox__label" for="checkbox-163" id="check-select-all-label">
-                                    <span class="slds-checkbox_faux"></span>
-                                    <span class="slds-form-element__label slds-assistive-text">Select All</span>
-                                </label>
-                            </div>
-                        </div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Project Name">Project Name</div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Priority">Priority</div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Owner">Owner</div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <aura:iteration items="{!v.projects}" var="project"> 
-                    <tr class="slds-hint-parent">   
-                        <td class="slds-text-align_right" role="gridcell">
-                            <lightning:input type="checkbox" label="{!project.Id}" onchange="{!c.onCheckboxClick}"/>
-                        </td>
-                        <th scope="row" tabindex="0">
-                            <div class="slds-truncate" title="{!project.Name}">{!project.Name}</div>
-                        </th>
-                        <td data-label="Priority">
-                            <div class="slds-truncate" title="{!project.Priority__c}">{!project.Priority__c}</div>
-                        </td>
-                        <td data-label="Owner">
-                            <div class="slds-truncate" title="{!project.User__r.Name}">{!project.User__r.Name}</div>
-                        </td> 
-                    </tr>
-                </aura:iteration>
-            </tbody>
-        </table>
+        <div class="slds-grid slds-p-vertical_medium">
+            <div class="slds-col">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="slds-text-align_right" scope="col" style="width: 3.25rem;">
+                                <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
+                                <div class="slds-th__action slds-th__action_form">
+                                    <div class="slds-checkbox">
+                                            <input type="checkbox" name="options" id="checkbox-163" tabindex="-1" aria-labelledby="check-select-all-label column-group-header" value="checkbox-163" />
+                                            <label class="slds-checkbox__label" for="checkbox-163" id="check-select-all-label">
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Project Name">Project Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Priority">Priority</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Owner">Owner</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.projects}" var="project"> 
+                            <tr class="slds-hint-parent">   
+                                <td class="slds-text-align_right" role="gridcell">
+                                    <lightning:input type="checkbox" label="{!project.Id}" onchange="{!c.onCheckboxClick}"/>
+                                </td>
+                                <th scope="row" tabindex="0">
+                                    <div class="slds-truncate" title="{!project.Name}">{!project.Name}</div>
+                                </th>
+                                <td data-label="Priority">
+                                    <div class="slds-truncate" title="{!project.Priority__c}">{!project.Priority__c}</div>
+                                </td>
+                                <td data-label="Owner">
+                                    <lightning:button variant="base" 
+                                                        name="{!project.User__c}" 
+                                                        onclick="{!c.navigateToUser}">{!project.User__r.Name}</lightning:button>
+                                </td> 
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-gutters slds-grid_align-end">
+            <div class="slds-col">
+                <lightning:button variant="base" 
+                                    iconName="utility:left"
+                                    iconPosition="left" 
+                                    label="previus" 
+                                    onclick="{!c.gotToPrevius}">
+            </div>
+            <div class="slds-col">
+                    <lightning:button variant="base" 
+                                        iconName="utility:right"
+                                        iconPosition="right" 
+                                        label="next" 
+                                        onclick="{!c.gotToNext}" />
+                </div>
+        </div>
     </div>
 </aura:component>

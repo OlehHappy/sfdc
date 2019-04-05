@@ -1,3 +1,6 @@
+.THIS {
+    background-color: white;
+}
 .THIS .slds-checkbox .slds-form-element__label {
     display: none;
 }

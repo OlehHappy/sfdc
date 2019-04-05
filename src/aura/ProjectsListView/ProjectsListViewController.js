@@ -25,5 +25,16 @@
 		var selectedIds = cmp.get('v.selectedIds');
 		console.log('olehdebug >>> selectedIds: ', selectedIds);
 		helper.changeOwner(cmp);
+	},
+
+	navigateToUser: function(cmp, evt, helper) {
+		var userId = evt.getSource().get('v.name');
+		var navEvt = $A.get('e.force:navigateToSObject');
+
+		navEvt.setParams({
+			recordId: userId
+		});
+
+		navEvt.fire();
 	}
 })
