@@ -1,10 +1,16 @@
 <aura:component controller="ProjectsListController" implements="force:appHostable" description="Project__c List View" >
     <aura:attribute name="projects" type="Project__c[]" access="private" />
     <aura:attribute name="selectedIds" type="List" access="private" />
-    
+    <aura:attribute name="pageNumber" type="Integer" default="0" access="private" />
+
+    <aura:attribute name="modal" type="Aura.Component[]" access="private" />
+    <aura:attribute name="closeModal" type="Boolean" default="true" access="private" />
+
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div>{!v.modal}</div>
     
-	<div class="slds-box">
+	<div class="slds-box main">
         <div class="slds-grid slds-gutters">
             <div class="slds-col">
                 <button class="slds-button slds-button_outline-brand" 
@@ -66,16 +72,17 @@
         <div class="slds-grid slds-gutters slds-grid_align-end">
             <div class="slds-col">
                 <lightning:button variant="base" 
-                                    iconName="utility:left"
-                                    iconPosition="left" 
                                     label="previus" 
-                                    onclick="{!c.gotToPrevius}">
+                                    iconName="utility:chevronleft"
+                                    iconPosition="left" 
+                                    onclick="{!c.gotToPrevius}" 
+                                    disabled="{! if(equals(v.pageNumber, 0), true, false)}"/>
             </div>
             <div class="slds-col">
                     <lightning:button variant="base" 
-                                        iconName="utility:right"
-                                        iconPosition="right" 
                                         label="next" 
+                                        iconName="utility:chevronright"
+                                        iconPosition="right" 
                                         onclick="{!c.gotToNext}" />
                 </div>
         </div>

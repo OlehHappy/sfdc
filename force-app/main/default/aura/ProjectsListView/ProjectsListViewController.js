@@ -1,6 +1,6 @@
 ({
 	doInit: function(cmp, evt, helper) {
-		helper.getList(cmp, 0);
+		helper.getList(cmp);
 	},
 
 	onCheckboxClick: function(cmp, evt, helper) {
@@ -19,12 +19,29 @@
 		}
 
 		cmp.set('v.selectedIds', selectedIds);
-	},
+	}, 
 
 	assignForUser: function(cmp, evt, helper) {
 		var selectedIds = cmp.get('v.selectedIds');
 		console.log('olehdebug >>> selectedIds: ', selectedIds);
-		helper.changeOwner(cmp);
+		// helper.changeOwner(cmp);
+		$A.createComponent('c:assignProjectToUser',{
+			closeComponent: cmp.getReference('c.handleCloseModal')
+		}, function(assignProjectToUser, status, errorMessage){
+			if (status === 'SUCCESS') {
+				var modal = cmp.get('v.modal');
+				modal.push(assignProjectToUser);
+
+				cmp.set('v.modal', modal);
+			}
+		});
+	},
+
+	handleCloseModal: function(cmp, evt, helper) {
+		var modal = cmp.get('v.modal');
+		modal.shift();
+
+		cmp.set('v.modal', modal);
 	},
 
 	navigateToUser: function(cmp, evt, helper) {
@@ -36,5 +53,19 @@
 		});
 
 		navEvt.fire();
+	},
+
+	gotToPrevius: function (cmp, evt, helper) {
+		var pageNumber = cmp.get('v.pageNumber');
+		cmp.set('v.pageNumber', pageNumber - 1);
+
+		helper.getList(cmp);
+	},
+
+	gotToNext: function (cmp, evt, helper) {
+		var pageNumber = cmp.get('v.pageNumber');
+		cmp.set('v.pageNumber', pageNumber + 1);
+
+		helper.getList(cmp);
 	}
 })

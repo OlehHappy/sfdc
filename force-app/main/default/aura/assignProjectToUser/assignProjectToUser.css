@@ -1,0 +1,11 @@
+.THIS {
+    position: absolute;
+}
+.THIS .slds-button__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #fff;
+}
+.THIS .slds-modal__close {
+    right: 0;
+}

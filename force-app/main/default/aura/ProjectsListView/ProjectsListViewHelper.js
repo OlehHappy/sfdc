@@ -1,7 +1,9 @@
 ({
-	getList: function(cmp, offSetVal) {
-		var action = cmp.get('c.getProjectsList');
+	getList: function(cmp) {
+        var action = cmp.get('c.getProjectsList');
+        var offSetVal = cmp.get('v.pageNumber') * 20;
 
+        console.log('olehdebug >>> offSetVal: ', offSetVal);
         action.setParams({
             offSetVal: offSetVal
         });

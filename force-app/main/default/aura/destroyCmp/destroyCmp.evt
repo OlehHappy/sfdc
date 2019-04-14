@@ -1,0 +1,1 @@
+<aura:event type="COMPONENT" description="Using for destroying dynamic components" />
