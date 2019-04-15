@@ -20,21 +20,41 @@
 
 		cmp.set('v.selectedIds', selectedIds);
 	}, 
+	
+	onSelectAll: function(cmp, evt, helper) {
+
+	},
 
 	assignForUser: function(cmp, evt, helper) {
-		var selectedIds = cmp.get('v.selectedIds');
-		console.log('olehdebug >>> selectedIds: ', selectedIds);
-		// helper.changeOwner(cmp);
-		$A.createComponent('c:assignProjectToUser',{
-			closeComponent: cmp.getReference('c.handleCloseModal')
-		}, function(assignProjectToUser, status, errorMessage){
-			if (status === 'SUCCESS') {
-				var modal = cmp.get('v.modal');
-				modal.push(assignProjectToUser);
+		if ($A.util.isEmpty(cmp.get('v.selectedIds'))) {
+			helper.showToast('Unsuccess!', 'error', 'Please choose the at least one record before.');
+		} else {
+			$A.createComponent('c:assignProjectToUser',{
+				onClose: cmp.getReference('c.handleCloseModal'), 
+				onSave: cmp.getReference('c.handleSaveModal'), 
+				userId: cmp.getReference('v.selectedUserId')
+			}, function(assignProjectToUser, status, errorMessage){
+				if (status === 'SUCCESS') {
+					var modal = cmp.get('v.modal');
+					modal.push(assignProjectToUser);
+	
+					cmp.set('v.modal', modal);
+				}
+			});
+		}
+	},
 
-				cmp.set('v.modal', modal);
-			}
-		});
+	handleSaveModal: function(cmp, evt, helper) {
+		console.log('olehdebug >>> handleSaveModal: ', cmp.get('v.selectedUserId'));
+		if ($A.util.isEmpty(cmp.get('v.selectedUserId'))) {
+			helper.showToast('Unsuccess!', 'error', 'Please choose User to assign.');
+		} else {
+			var modal = cmp.get('v.modal');
+			modal.shift();
+	
+			cmp.set('v.modal', modal);
+			helper.changeOwner(cmp);
+		}
 	},
 
 	handleCloseModal: function(cmp, evt, helper) {

@@ -1,34 +1,34 @@
 public class UserLookupController {
 
     @AuraEnabled(cacheable=true) 
-    public static List<RecordsData> fetchRecords( String objectName, String filterField, String searchString ) {
-        List<RecordsData> recordsDataList = new List<RecordsData>();
+    public static List<RecordWrapper> getUsersByName(String searchString) {
+        List<RecordWrapper> recordsDataList = new List<RecordWrapper>();
 
         try {
-	        String query = 'SELECT Id, ' + filterField+
-	                        ' FROM '+objectName+
-	                        ' WHERE '+filterField+' LIKE ' + '\'' + String.escapeSingleQuotes(searchString.trim()) + '%\'' + ' LIMIT 50000';
+	        String query = 'SELECT Id, Name'
+                        + ' FROM User'
+                        + ' WHERE Name'
+                        + ' LIKE ' + '\'' + String.escapeSingleQuotes(searchString.trim()) + '%\'' + ' LIMIT 50000';
 
 	        for(SObject s : Database.query(query)){
-	            RecordsData recordsData = new RecordsData();
-	            recordsData.value = String.valueOf(s.get('Id'));
-	            recordsData.label = String.valueOf(s.get(filterField));
-	            recordsDataList.add(recordsData);
+	            RecordWrapper recordData = new RecordWrapper();
+	            recordData.userId = String.valueOf(s.get('Id'));
+	            recordData.userName = String.valueOf(s.get('Name'));
+	            recordsDataList.add(recordData);
 	        } 
-	    } catch (Exception err) {
-	    	if ( String.isNotBlank( err.getMessage() ) && err.getMessage().contains( 'error:' ) ) {
-                throw new AuraHandledException(err.getMessage().split('error:')[1].split(':')[0] + '.');
+	    } catch (Exception ex) {
+	    	if (String.isNotBlank(ex.getMessage()) && ex.getMessage().contains( 'error:' )) {
+                throw new AuraHandledException(ex.getMessage().split('error:')[1].split(':')[0] + '.');
             } else {
-                throw new AuraHandledException(err.getMessage());
+                throw new AuraHandledException(ex.getMessage());
             }
 	    }
         
         return recordsDataList;
     }
 
-    public class RecordsData{
-        @AuraEnabled public String label {get;set;}
-        @AuraEnabled public String value {get;set;}
+    public class RecordWrapper {
+        @AuraEnabled public String userId {get;set;}
+        @AuraEnabled public String userName {get;set;}
     }
-
 }

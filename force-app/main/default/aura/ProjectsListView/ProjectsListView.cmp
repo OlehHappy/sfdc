@@ -1,6 +1,7 @@
 <aura:component controller="ProjectsListController" implements="force:appHostable" description="Project__c List View" >
     <aura:attribute name="projects" type="Project__c[]" access="private" />
     <aura:attribute name="selectedIds" type="List" access="private" />
+    <aura:attribute name="selectedUserId" type="Id" access="private" />
     <aura:attribute name="pageNumber" type="Integer" default="0" access="private" />
 
     <aura:attribute name="modal" type="Aura.Component[]" access="private" />
@@ -8,13 +9,16 @@
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
+    <lightning:spinner aura:id="spinner" class="slds-hide" alternativeText="Loading" size="large" />
+
     <div>{!v.modal}</div>
     
 	<div class="slds-box main">
         <div class="slds-grid slds-gutters">
             <div class="slds-col">
-                <button class="slds-button slds-button_outline-brand" 
-                    onclick="{!c.assignForUser}">Assign for User</button>
+                    <lightning:button variant="brand" 
+                                        label="Assign for User" 
+                                        onclick="{!c.assignForUser }" />
             </div>
         </div>
         <div class="slds-grid slds-p-vertical_medium">
@@ -23,16 +27,7 @@
                     <thead>
                         <tr class="slds-line-height_reset">
                             <th class="slds-text-align_right" scope="col" style="width: 3.25rem;">
-                                <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
-                                <div class="slds-th__action slds-th__action_form">
-                                    <div class="slds-checkbox">
-                                            <input type="checkbox" name="options" id="checkbox-163" tabindex="-1" aria-labelledby="check-select-all-label column-group-header" value="checkbox-163" />
-                                            <label class="slds-checkbox__label" for="checkbox-163" id="check-select-all-label">
-                                            <span class="slds-checkbox_faux"></span>
-                                            <span class="slds-form-element__label slds-assistive-text">Select All</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                <lightning:input type="checkbox" label="" onchange="{!c.onSelectAll}"/>
                             </th>
                             <th class="" scope="col">
                                 <div class="slds-truncate" title="Project Name">Project Name</div>

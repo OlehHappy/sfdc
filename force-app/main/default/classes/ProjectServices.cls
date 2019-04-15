@@ -8,4 +8,7 @@ public class ProjectServices {
                 OFFSET :offSetVal];
     }
 
+    public void updateProjects(List<Project__c> projectList) {
+        update projectList;
+    }
 }

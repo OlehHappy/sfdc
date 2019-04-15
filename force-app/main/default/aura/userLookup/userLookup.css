@@ -16,11 +16,10 @@
 	padding-left: 30px;
 }
 
-.THIS .inputIcon {
-	z-index: 99;
+.THIS .dropdownList {
+	position: relative;
 }
 
-/* For Scrolling */
 .THIS ::-webkit-scrollbar {
     width: 7px;
     height: 7px;
