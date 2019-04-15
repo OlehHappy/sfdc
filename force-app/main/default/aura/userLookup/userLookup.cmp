@@ -1,23 +1,17 @@
 <aura:component controller="UserLookupController" >
 
 	<aura:attribute name="selectedUserId" type="Id" />
-    <!-- <aura:attribute name="fieldName" type="string" default="Name" /> -->
 	<aura:attribute name="recordCount" type="string" default="5" />
 	<aura:attribute name="searchString" type="string" default="" />
 	<aura:attribute name="selectedUserName" type="String" access="private" />
     <aura:attribute name="usersList" type="List" access="private" />
     <aura:attribute name="errorMessage" type="String" default="" access="private" />
-    <!-- <aura:attribute name="label" type="string" default="" description="Label will be displayed above input Box" /> -->
-    <!-- <aura:attribute name="placeholder" type="string" default="Search.." description="placeholder for input Box" /> -->
-<!-- <aura:attribute name="selectedRecord" type="Object" default="" description="selected Record Details" /> -->
-
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <div class="slds-form-element">
-		<label class="slds-form-element__label" for="combobox-id-1">Name</label>
+		<label class="slds-form-element__label">Name</label>
 		<div class="slds-form-element__control">
 		    <div class="slds-combobox_container">
-				<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" 
+				<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" 
 						aura:id="resultsDiv" 
 						aria-expanded="true" 
 						aria-haspopup="listbox" 
@@ -41,15 +35,14 @@
 												onkeyup="{!c.searchRecords}" 
 												value="{!v.searchString}" 
 												onblur="{!c.onBlur}" 
-												aria-controls="listbox-id-1" 
 												autoComplete="off" />
 
 					        <lightning:spinner aura:id="spinner" class="slds-hide" alternativeText="Loading" size="small" variant="brand" />
 					    </div>
 			        </div>
-			        <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid dropdownList" role="listbox" style="{! 'max-height:' + (8 + (v.recordCount * 40)) + 'px' }">
+			        <div class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid dropdownList" role="listbox" style="{! 'max-height:' + (8 + (v.recordCount * 40)) + 'px' }">
 				        <ul class="slds-listbox slds-listbox_vertical recordListBox" role="presentation">
-				        	<aura:if isTrue="{! v.message == '' }" >
+				        	<aura:if isTrue="{!empty(v.errorMessage)}" >
 					          	<aura:iteration items="{!v.usersList}" var="rec" >
 						            <li id="{!rec.userId}" class="slds-listbox__item" onmousedown="{!c.selectUser}">
 							            <div class="slds-media slds-listbox__option_entity">
@@ -65,7 +58,7 @@
 				              	<aura:set attribute="else">
 									<li class="slds-listbox__item">
 						                <div id="option1" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta">
-							                <span class="slds-media__body">{!v.message}</span>
+							                <span class="slds-media__body">{!v.errorMessage}</span>
 						                </div>
 					              	</li>
 				              	</aura:set>

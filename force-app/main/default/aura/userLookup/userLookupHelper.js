@@ -1,12 +1,10 @@
 ({
 	searchRecordsHelper: function(cmp, value) {
 		$A.util.removeClass(cmp.find('spinner'), 'slds-hide');
-        // component.set('v.message', '');
-        // component.set('v.recordsList', null);
     	var action = cmp.get('c.getUsersByName');
         action.setStorable();
         action.setParams({
-            searchString: component.get('v.searchString')
+            searchString: cmp.get('v.searchString')
         });
         action.setCallback(this, function(response){
         	if(response.getState() === 'SUCCESS') {
@@ -24,10 +22,11 @@
                     cmp.set('v.errorMessage', errors[0].message);
                 }
             }
-            // if( $A.util.isEmpty(value) )
+
             $A.util.addClass(cmp.find('resultsDiv'), 'slds-is-open');
         	$A.util.addClass(cmp.find('spinner'), 'slds-hide');
         });
+
         $A.enqueueAction(action);
 	}
 })
